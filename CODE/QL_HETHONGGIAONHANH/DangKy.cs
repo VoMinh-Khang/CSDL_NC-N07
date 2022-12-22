@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,7 +16,7 @@ namespace QL_HETHONGGIAONHANH
         Thread t;
         string username;
         string password;
-        string loaitk;
+        string LOAITAIKHOAN;
 
         public DangKy()
         {
@@ -45,6 +46,10 @@ namespace QL_HETHONGGIAONHANH
         {
             Application.Run(new DangNhap());
         }
+        public void open_FormDangKyDoiTac(object obj)
+        {
+            Application.Run(new DANGKYDOITAC());
+        }
         private void btn_quaylai_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -55,24 +60,42 @@ namespace QL_HETHONGGIAONHANH
 
         public void open_FormKHDangKyTT(object obj)
         {
-            Application.Run(new KHDangKyTT(username,password,loaitk));
+            Application.Run(new KHDangKyTT(username,password, LOAITAIKHOAN));
             //Application.Run(new TT_KH_DK(tendn, matkhau, LOAITK));
         }
-        private void checkBox_KhachHang_CheckedChanged(object sender, EventArgs e)
+        //private void checkBox_KhachHang_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    if (checkBox_KhachHang.Checked == true)
+        //    {
+        //        checkBox_TaiXe.Checked = false;
+        //        LOAITAIKHOAN = "4";
+        //    }
+        //}
+        //private void checkBox_TaiXe_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    if (checkBox_TaiXe.Checked == true)
+        //    {
+        //        checkBox_KhachHang.Checked = false;
+        //        LOAITAIKHOAN = "2";
+        //    }
+        //}
+        private int Run_SP_KTTenDangNhap()
         {
-            if (checkBox_KhachHang.Checked == true)
-            {
-                checkBox_TaiXe.Checked = false;
-                loaitk = "4";
-            }
-        }
-        private void checkBox_TaiXe_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBox_TaiXe.Checked == true)
-            {
-                checkBox_KhachHang.Checked = false;
-                //loaitk = "4";
-            }
+            SqlCommand cmd = new SqlCommand("USP_CHECKUSERNAME", Functions.Con);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+            // set kiểu dữ liệu
+            cmd.Parameters.Add("@USERNAME", SqlDbType.VarChar, 20);
+
+            var returnParameter = cmd.Parameters.Add("@ReturnVal", SqlDbType.Int);
+            returnParameter.Direction = ParameterDirection.ReturnValue;
+
+            // set giá trị
+            cmd.Parameters["@USERNAME"].Value = username;
+
+            cmd.ExecuteNonQuery();
+
+            return Int32.Parse(returnParameter.Value.ToString());
         }
 
         private void btn_dangky_Click(object sender, EventArgs e)
@@ -89,21 +112,39 @@ namespace QL_HETHONGGIAONHANH
             }
             username = txtUsername.Text.Trim();
             password = txtPassword.Text.Trim();
-            
-            
+
+
             //kiểm tra tên đăng nhập tồn tại còn THIếu *****
-            
-            
+            // Kiểm tra tên đăng nhập           
+            if (Run_SP_KTTenDangNhap() == 1)
+            {
+                MessageBox.Show("Tên đăng nhập này đã tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtUsername.Focus();
+                return;
+            }
+
+            if (txtPassword.Text.Trim().Length > 20)
+            {
+                MessageBox.Show("Mật khẩu không được dài hơn 20 ký tự!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtPassword.Focus();
+                return;
+            }
+
+            //thiếu: usp_taotaikhoan
+
+
             this.Close();
 
             // mở form nhập thông tin cá nhân
             if (checkBox_KhachHang.Checked == true)
             {
+                checkBox_TaiXe.Checked = false;
+                LOAITAIKHOAN = "4";
                 t = new Thread(open_FormKHDangKyTT);
             }
             else if (checkBox_TaiXe.Checked == true)
             {
-                t = new Thread(open_FormDangNhap);
+                t = new Thread(open_FormDangKyDoiTac);
                 
             }    
            

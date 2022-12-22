@@ -36,7 +36,7 @@
             this.textBox_SDT = new System.Windows.Forms.TextBox();
             this.textBox_DiaChi = new System.Windows.Forms.TextBox();
             this.textBox_Email = new System.Windows.Forms.TextBox();
-            this.btn_dangky = new System.Windows.Forms.Button();
+            this.btn_hoantat = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -121,21 +121,21 @@
             this.textBox_Email.Size = new System.Drawing.Size(632, 39);
             this.textBox_Email.TabIndex = 7;
             // 
-            // btn_dangky
+            // btn_hoantat
             // 
-            this.btn_dangky.BackColor = System.Drawing.Color.SteelBlue;
-            this.btn_dangky.FlatAppearance.BorderSize = 0;
-            this.btn_dangky.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_dangky.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.btn_dangky.ForeColor = System.Drawing.Color.White;
-            this.btn_dangky.Location = new System.Drawing.Point(389, 463);
-            this.btn_dangky.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btn_dangky.Name = "btn_dangky";
-            this.btn_dangky.Size = new System.Drawing.Size(184, 50);
-            this.btn_dangky.TabIndex = 22;
-            this.btn_dangky.Text = "Đăng Ký";
-            this.btn_dangky.UseVisualStyleBackColor = false;
-            this.btn_dangky.Click += new System.EventHandler(this.btn_dangky_Click);
+            this.btn_hoantat.BackColor = System.Drawing.Color.SteelBlue;
+            this.btn_hoantat.FlatAppearance.BorderSize = 0;
+            this.btn_hoantat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_hoantat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.btn_hoantat.ForeColor = System.Drawing.Color.White;
+            this.btn_hoantat.Location = new System.Drawing.Point(389, 463);
+            this.btn_hoantat.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btn_hoantat.Name = "btn_hoantat";
+            this.btn_hoantat.Size = new System.Drawing.Size(184, 50);
+            this.btn_hoantat.TabIndex = 22;
+            this.btn_hoantat.Text = "Hoàn Tất";
+            this.btn_hoantat.UseVisualStyleBackColor = false;
+            this.btn_hoantat.Click += new System.EventHandler(this.btn_hoantat_Click);
             // 
             // label5
             // 
@@ -155,7 +155,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(913, 544);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.btn_dangky);
+            this.Controls.Add(this.btn_hoantat);
             this.Controls.Add(this.textBox_Email);
             this.Controls.Add(this.textBox_DiaChi);
             this.Controls.Add(this.textBox_SDT);
@@ -183,7 +183,7 @@
         private TextBox textBox_SDT;
         private TextBox textBox_DiaChi;
         private TextBox textBox_Email;
-        private Button btn_dangky;
+        private Button btn_hoantat;
         private Label label5;
     }
 }

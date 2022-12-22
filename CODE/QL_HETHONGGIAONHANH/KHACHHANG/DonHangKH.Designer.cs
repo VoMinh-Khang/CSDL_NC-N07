@@ -34,24 +34,27 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtBox_GiaMon = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox_DCG = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox_PhiSP = new System.Windows.Forms.TextBox();
             this.btn_ThanhToan = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox_PhiVC = new System.Windows.Forms.TextBox();
+            this.textBox_TongTien = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.textBox_LuongMua = new System.Windows.Forms.TextBox();
+            this.buttonGiam = new System.Windows.Forms.Button();
+            this.buttonTang = new System.Windows.Forms.Button();
+            this.textBox_SoLuongTon = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(46, 228);
+            this.label1.Location = new System.Drawing.Point(46, 306);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(125, 25);
@@ -76,7 +79,6 @@
             this.txtBox_TenMon.Name = "txtBox_TenMon";
             this.txtBox_TenMon.Size = new System.Drawing.Size(193, 31);
             this.txtBox_TenMon.TabIndex = 13;
-            this.txtBox_TenMon.TextChanged += new System.EventHandler(this.txtBox_TenMon_TextChanged);
             // 
             // label3
             // 
@@ -99,25 +101,25 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(376, 282);
+            this.label4.Location = new System.Drawing.Point(393, 306);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(187, 25);
             this.label4.TabIndex = 20;
             this.label4.Text = "Hình Thức Thanh Toán";
             // 
-            // textBox3
+            // textBox_DCG
             // 
-            this.textBox3.Location = new System.Drawing.Point(376, 77);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(321, 31);
-            this.textBox3.TabIndex = 19;
+            this.textBox_DCG.Location = new System.Drawing.Point(42, 390);
+            this.textBox_DCG.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox_DCG.Name = "textBox_DCG";
+            this.textBox_DCG.Size = new System.Drawing.Size(321, 31);
+            this.textBox_DCG.TabIndex = 19;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(380, 47);
+            this.label5.Location = new System.Drawing.Point(46, 360);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(105, 25);
@@ -125,52 +127,34 @@
             this.label5.Text = "Địa chỉ giao";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(191, 225);
-            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.numericUpDown1.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(86, 31);
-            this.numericUpDown1.TabIndex = 21;
-            this.numericUpDown1.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
-            // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "Ví Momo",
-            "Ví Zalopay"});
-            this.comboBox1.Location = new System.Drawing.Point(380, 312);
+            "COD",
+            "Momo",
+            "Zalopay"});
+            this.comboBox1.Location = new System.Drawing.Point(397, 336);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(215, 33);
             this.comboBox1.TabIndex = 22;
             // 
-            // textBox1
+            // textBox_PhiSP
             // 
-            this.textBox1.Location = new System.Drawing.Point(47, 312);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(250, 31);
-            this.textBox1.TabIndex = 17;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox_PhiSP.Location = new System.Drawing.Point(393, 77);
+            this.textBox_PhiSP.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox_PhiSP.Name = "textBox_PhiSP";
+            this.textBox_PhiSP.Size = new System.Drawing.Size(150, 31);
+            this.textBox_PhiSP.TabIndex = 17;
+            this.textBox_PhiSP.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // btn_ThanhToan
             // 
-            this.btn_ThanhToan.Location = new System.Drawing.Point(526, 395);
+            this.btn_ThanhToan.Location = new System.Drawing.Point(556, 399);
             this.btn_ThanhToan.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_ThanhToan.Name = "btn_ThanhToan";
-            this.btn_ThanhToan.Size = new System.Drawing.Size(150, 62);
+            this.btn_ThanhToan.Size = new System.Drawing.Size(134, 70);
             this.btn_ThanhToan.TabIndex = 23;
             this.btn_ThanhToan.Text = "Đặt Hàng";
             this.btn_ThanhToan.UseVisualStyleBackColor = true;
@@ -179,7 +163,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(47, 282);
+            this.label6.Location = new System.Drawing.Point(393, 47);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(120, 25);
@@ -190,56 +174,109 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(47, 365);
+            this.label7.Location = new System.Drawing.Point(393, 128);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(135, 25);
             this.label7.TabIndex = 26;
             this.label7.Text = "Phí Vận Chuyển";
             // 
-            // textBox2
+            // textBox_PhiVC
             // 
-            this.textBox2.Location = new System.Drawing.Point(47, 395);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(250, 31);
-            this.textBox2.TabIndex = 25;
+            this.textBox_PhiVC.Location = new System.Drawing.Point(393, 158);
+            this.textBox_PhiVC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox_PhiVC.Name = "textBox_PhiVC";
+            this.textBox_PhiVC.Size = new System.Drawing.Size(150, 31);
+            this.textBox_PhiVC.TabIndex = 25;
             // 
-            // textBox4
+            // textBox_TongTien
             // 
-            this.textBox4.Location = new System.Drawing.Point(380, 188);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(111, 31);
-            this.textBox4.TabIndex = 28;
+            this.textBox_TongTien.Location = new System.Drawing.Point(393, 241);
+            this.textBox_TongTien.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox_TongTien.Name = "textBox_TongTien";
+            this.textBox_TongTien.Size = new System.Drawing.Size(150, 31);
+            this.textBox_TongTien.TabIndex = 28;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(380, 158);
+            this.label8.Location = new System.Drawing.Point(393, 211);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(90, 25);
             this.label8.TabIndex = 27;
             this.label8.Text = "Tổng Tiền";
             // 
+            // textBox_LuongMua
+            // 
+            this.textBox_LuongMua.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox_LuongMua.Location = new System.Drawing.Point(221, 302);
+            this.textBox_LuongMua.Name = "textBox_LuongMua";
+            this.textBox_LuongMua.Size = new System.Drawing.Size(61, 31);
+            this.textBox_LuongMua.TabIndex = 31;
+            this.textBox_LuongMua.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // buttonGiam
+            // 
+            this.buttonGiam.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonGiam.Location = new System.Drawing.Point(175, 301);
+            this.buttonGiam.Name = "buttonGiam";
+            this.buttonGiam.Size = new System.Drawing.Size(40, 34);
+            this.buttonGiam.TabIndex = 32;
+            this.buttonGiam.Text = "-";
+            this.buttonGiam.UseVisualStyleBackColor = true;
+            this.buttonGiam.Click += new System.EventHandler(this.buttonGiam_Click);
+            // 
+            // buttonTang
+            // 
+            this.buttonTang.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonTang.Location = new System.Drawing.Point(288, 301);
+            this.buttonTang.Name = "buttonTang";
+            this.buttonTang.Size = new System.Drawing.Size(33, 34);
+            this.buttonTang.TabIndex = 33;
+            this.buttonTang.Text = "+";
+            this.buttonTang.UseVisualStyleBackColor = true;
+            this.buttonTang.Click += new System.EventHandler(this.buttonTang_Click);
+            // 
+            // textBox_SoLuongTon
+            // 
+            this.textBox_SoLuongTon.Location = new System.Drawing.Point(46, 241);
+            this.textBox_SoLuongTon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox_SoLuongTon.Name = "textBox_SoLuongTon";
+            this.textBox_SoLuongTon.Size = new System.Drawing.Size(193, 31);
+            this.textBox_SoLuongTon.TabIndex = 35;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(46, 211);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(117, 25);
+            this.label9.TabIndex = 34;
+            this.label9.Text = "Số lượng tồn";
+            // 
             // DonHangKH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(734, 502);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textBox_SoLuongTon);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.buttonTang);
+            this.Controls.Add(this.buttonGiam);
+            this.Controls.Add(this.textBox_LuongMua);
+            this.Controls.Add(this.textBox_TongTien);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox_PhiVC);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btn_ThanhToan);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBox_DCG);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBox_PhiSP);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtBox_GiaMon);
             this.Controls.Add(this.label3);
@@ -249,7 +286,6 @@
             this.Name = "DonHangKH";
             this.Text = "DonHang_KH";
             this.Load += new System.EventHandler(this.DonHang_KH_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -262,16 +298,20 @@
         private Label label3;
         private TextBox txtBox_GiaMon;
         private Label label4;
-        private TextBox textBox3;
+        private TextBox textBox_DCG;
         private Label label5;
-        private NumericUpDown numericUpDown1;
         private ComboBox comboBox1;
-        private TextBox textBox1;
+        private TextBox textBox_PhiSP;
         private Button btn_ThanhToan;
         private Label label6;
         private Label label7;
-        private TextBox textBox2;
-        private TextBox textBox4;
+        private TextBox textBox_PhiVC;
+        private TextBox textBox_TongTien;
         private Label label8;
+        private TextBox textBox_LuongMua;
+        private Button buttonGiam;
+        private Button buttonTang;
+        private TextBox textBox_SoLuongTon;
+        private Label label9;
     }
 }

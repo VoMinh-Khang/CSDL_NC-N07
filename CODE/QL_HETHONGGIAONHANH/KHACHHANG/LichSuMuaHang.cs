@@ -2,66 +2,68 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace QL_HETHONGGIAONHANH
 {
     public partial class LichSuMuaHang : Form
     {
+        //Thread t;
         string MAKH;
         DataTable tbl_LSMH;
-        
-        public LichSuMuaHang()
+        string madon;
+        public LichSuMuaHang(string makh)
         {
             InitializeComponent();
+            MAKH = makh;
         }
 
         private void Load_Data()
         {
-            //string sql = "Sp_KH_LayThongTinDH '" + MAKH + "'";
-            //tbl_LSMH = Functions.GetDataToTable(sql);
-            //dataGridView1.DataSource = tbl_LSMH;
+            string sql = "USP_THEODOIDH '" + MAKH + "'";
+            tbl_LSMH = Functions.GetDataToTable(sql);
+            dsDonHang.DataSource = tbl_LSMH;
 
             // set Font cho tên cột
-            dataGridView1.Font = new Font("Time New Roman", 13);
-            dataGridView1.Columns[0].HeaderText = "Mã đơn hàng";
-            dataGridView1.Columns[1].HeaderText = "Mã khách hàng";
-            dataGridView1.Columns[2].HeaderText = "Mã nhân viên";
-            dataGridView1.Columns[3].HeaderText = "Tên người nhận";
-            dataGridView1.Columns[4].HeaderText = "Địa chỉ người nhận";
-            dataGridView1.Columns[5].HeaderText = "SĐT người nhận";
-            dataGridView1.Columns[6].HeaderText = "Phí vận chuyển";
-            dataGridView1.Columns[7].HeaderText = "Hình thức thanh toán";
-            dataGridView1.Columns[8].HeaderText = "Ngày muốn giao";
-            dataGridView1.Columns[9].HeaderText = "Ngày lập";
-            dataGridView1.Columns[10].HeaderText = "Tình trạng";
-            dataGridView1.Columns[11].HeaderText = "Tổng tiền";
+            dsDonHang.Font = new Font("Time New Roman", 13);
+            dsDonHang.Columns[0].HeaderText = "Mã đơn hàng";
+            dsDonHang.Columns[1].HeaderText = "Ngày lập";
+            dsDonHang.Columns[2].HeaderText = "Hình thức thanh toán";
+            dsDonHang.Columns[3].HeaderText = "Địa chỉ giao";
+            dsDonHang.Columns[4].HeaderText = "Phí sản phẩm";
+            dsDonHang.Columns[5].HeaderText = "Phí vận chuyển";
+            dsDonHang.Columns[6].HeaderText = "Tổng tiền";
+            dsDonHang.Columns[7].HeaderText = "Tình trạng";
+            dsDonHang.Columns[8].HeaderText = "Ngày giao";
+            //dsDonHang.Columns[9].HeaderText = "Mã khách hàng"; ;
+            dsDonHang.Columns[9].HeaderText = "Tài xế";
+
 
             // set Font cho dữ liệu hiển thị trong cột
-            dataGridView1.DefaultCellStyle.Font = new Font("Time New Roman", 12);
+            dsDonHang.DefaultCellStyle.Font = new Font("Time New Roman", 12);
 
             // set kích thước cột
-            dataGridView1.Columns[0].Width = 200;
-            dataGridView1.Columns[1].Width = 0;
-            dataGridView1.Columns[2].Width = 0;
-            dataGridView1.Columns[3].Width = 200;
-            dataGridView1.Columns[4].Width = 200;
-            dataGridView1.Columns[5].Width = 200;
-            dataGridView1.Columns[6].Width = 200;
-            dataGridView1.Columns[7].Width = 0;
-            dataGridView1.Columns[8].Width = 200;
-            dataGridView1.Columns[9].Width = 200;
-            dataGridView1.Columns[10].Width = 200;
-            dataGridView1.Columns[11].Width = 200;
+            dsDonHang.Columns[0].Width = 100;
+            dsDonHang.Columns[1].Width = 200;
+            dsDonHang.Columns[2].Width = 100;
+            dsDonHang.Columns[3].Width = 200;
+            dsDonHang.Columns[4].Width = 100;
+            dsDonHang.Columns[5].Width = 100;
+            dsDonHang.Columns[6].Width = 100;
+            dsDonHang.Columns[7].Width = 200;
+            dsDonHang.Columns[8].Width = 200;
+            dsDonHang.Columns[9].Width = 200;
 
 
             //Không cho người dùng thêm dữ liệu trực tiếp
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.EditMode = DataGridViewEditMode.EditProgrammatically;
+            dsDonHang.AllowUserToAddRows = false;
+            dsDonHang.EditMode = DataGridViewEditMode.EditProgrammatically;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -72,11 +74,23 @@ namespace QL_HETHONGGIAONHANH
                 MessageBox.Show("Không có dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            txtBox_MaDH.Text = dataGridView1.CurrentRow.Cells["MADON"].Value.ToString();
-            txtBox_TongTien.Text = dataGridView1.CurrentRow.Cells["TONGTIEN"].Value.ToString();
-            txtBox_TinhTrang.Text = dataGridView1.CurrentRow.Cells["TINHTRANG"].Value.ToString();
-        }
+            txtBox_MaDH.Text = dsDonHang.CurrentRow.Cells["MADON"].Value.ToString();
+            txtBox_TongTien.Text = dsDonHang.CurrentRow.Cells["TONGTIEN"].Value.ToString();
+            txtBox_TinhTrang.Text = dsDonHang.CurrentRow.Cells["TINHTRANG"].Value.ToString();
 
+            if (txtBox_TinhTrang.Text.ToString().Equals("Chờ xác nhận"))
+            {
+                button_XacNhanDon.Enabled = true;
+                button_huydon.Enabled = true;
+            }
+            else
+            {
+                button_XacNhanDon.Enabled = false;
+                button_huydon.Enabled = false;
+            }
+                
+
+        }
         private void label2_Click(object sender, EventArgs e)
         {
 
@@ -99,9 +113,97 @@ namespace QL_HETHONGGIAONHANH
                 MessageBox.Show("Bạn chưa chọn đơn hàng nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            // ct_DonHang = new CT_DonHang(txtBox_MaDH.Text.Trim().ToString());
-            //ct_DonHang.StartPosition = FormStartPosition.CenterScreen;
-            //ct_DonHang.Show();
+            CT_DONHANG ct_donhang_nay = new CT_DONHANG(txtBox_MaDH.Text.Trim().ToString());
+            ct_donhang_nay.StartPosition = FormStartPosition.CenterScreen;
+            ct_donhang_nay.Show();
+        }
+
+        private void LichSuMuaHang_Load(object sender, EventArgs e)
+        {
+            Load_Data();
+        }
+        private int Run_USP_XacNhanDon()
+        {
+            SqlCommand cmd = new SqlCommand("USP_KH_XACNHANDON", Functions.Con);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+            // set kiểu dữ liệu
+            cmd.Parameters.Add("@madon", SqlDbType.VarChar, 15);
+
+            var returnParameter = cmd.Parameters.Add("@ReturnVal", SqlDbType.Int);
+            returnParameter.Direction = ParameterDirection.ReturnValue;
+
+            cmd.Parameters["@madon"].Value = madon;
+
+            cmd.ExecuteNonQuery();
+
+            return Int32.Parse(returnParameter.Value.ToString());
+
+        }
+
+        private void button_XacNhanDon_Click(object sender, EventArgs e)
+        {
+
+            //if (txtBox_TinhTrang.Text.ToString().Equals("Chờ xác nhận"))
+            //{
+            //    button_XacNhanDon.Enabled= true;
+            try
+            {
+                madon = txtBox_MaDH.Text;
+                int status = Run_USP_XacNhanDon();
+                if (status == 1)
+                {
+                    MessageBox.Show("Xác Nhận Đơn Hàng Thành Công! \nĐơn của bạn đang ở trạng thái chờ lấy hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    this.Close();
+                    //thiếu: chỗ này xong reload
+                    //LichSuMuaHang_Load(sender,e);
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show("Xác nhận đơn thất bại mã lỗi: " + err.ToString(), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+        }
+        private int Run_USP_KH_HuyDon()
+        {
+            SqlCommand cmd = new SqlCommand("USP_KH_HUYDON", Functions.Con);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+            // set kiểu dữ liệu
+            cmd.Parameters.Add("@madon", SqlDbType.VarChar, 15);
+
+            var returnParameter = cmd.Parameters.Add("@ReturnVal", SqlDbType.Int);
+            returnParameter.Direction = ParameterDirection.ReturnValue;
+
+            cmd.Parameters["@madon"].Value = madon;
+
+            cmd.ExecuteNonQuery();
+
+            return Int32.Parse(returnParameter.Value.ToString());
+        }
+        private void button_huydon_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                madon = txtBox_MaDH.Text;
+                int status = Run_USP_KH_HuyDon();
+                if (status == 1)
+                {
+                    MessageBox.Show("Hủy Đơn Hàng Thành Công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    this.Close();
+                    //thiếu: chỗ này xong reload
+                    //LichSuMuaHang_Load(sender,e);
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show("Hủy đơn thất bại mã lỗi: " + err.ToString(), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
         }
     }
 }
+

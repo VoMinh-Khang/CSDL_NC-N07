@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace QL_HETHONGGIAONHANH
 {
@@ -14,13 +15,14 @@ namespace QL_HETHONGGIAONHANH
     {
 
         Thread t;
-        string ID = "TK016";
+        string ID;
 
-        public FormMainKH()
+        public FormMainKH(string id)
         {
             InitializeComponent();
-            string sql = "SELECT TENKHACH FROM KHACHHANG WHERE TAIKHOAN = '" + ID + "'";
-            textBox1.Text = Functions.GetFieldValues(sql);
+            ID = id;
+            string sql = "SELECT TENKHACH FROM KHACHHANG WHERE TAIKHOAN = '" + id + "'";
+            textBox2.Text = Functions.GetFieldValues(sql);
         }
         private Form activeform = null;
         private void openChildForm(Form childForm)
@@ -96,12 +98,28 @@ namespace QL_HETHONGGIAONHANH
         {
 
         }
-
+        public void openFormMuaHang(object obj)
+        {
+            Application.Run(new MuaHangKH(ID));
+            
+            //Application.Run(new TT_KH_DK(tendn, matkhau, LOAITK));
+        }
         private void btn_muahang_KH_Click(object sender, EventArgs e)
         {
-            openChildForm(new MuaHangKH(ID));
-            //openChildForm(new MuaHangKH());
+            //openChildForm(new MuaHangKH(c));
+            //this.Close();
+            //activeform.Close();
+            //this.Close();
+            //Thread T;
+            //Thread mh = new Thread(open);
+            //MuaHangKH mh = new MuaHangKH(ID);
+            //mh.StartPosition = FormStartPosition.CenterScreen;
+            //mh.Show();
             ActivateButton(sender);
+            this.Close();
+            t = new Thread(openFormMuaHang);
+            t.SetApartmentState(ApartmentState.STA);
+            t.Start();
         }
 
         private void FormMain_KH_Load(object sender, EventArgs e)
@@ -117,7 +135,9 @@ namespace QL_HETHONGGIAONHANH
 
         private void btnLichSuMuaHang_Click_1(object sender, EventArgs e)
         {
-            openChildForm(new LichSuMuaHang());
+            string sql = "SELECT MAKHACH FROM KHACHHANG WHERE TAIKHOAN = '" + ID + "'";     
+            openChildForm(new LichSuMuaHang(Functions.GetFieldValues(sql)));
+           
             ActivateButton(sender);
         }
 

@@ -18,7 +18,7 @@ namespace QL_HETHONGGIAONHANH
         {
             Con = new SqlConnection();
             Con.ConnectionString = ConnectString;
-          //  Con.ConnectionString = "Data Source=DESKTOP-0QKBNDR;Initial Catalog=HYT;Integrated Security=True";
+            //  Con.ConnectionString = "Data Source=DESKTOP-0QKBNDR;Initial Catalog=HYT;Integrated Security=True";
             //Mở kết nối
             Con.Open();
 
@@ -45,8 +45,13 @@ namespace QL_HETHONGGIAONHANH
                 //MessageBox.Show("Đóng Kết nối DB thành công");
             }
         }
-
-        // lấy ConnectString với mỗi loại user
+        public static string get_ConnectString()
+        {
+            string s = "";
+            s = @"Data Source=" + exactly_server_name + ";Initial Catalog=QL_HETHONGGIAONHANH;Persist Security Info=True;User ID=sa;Password=Trang6720002";
+            return s;
+        }
+        //lấy ConnectString với mỗi loại user
         public static string get_ConnectString(int type)
         {
             string s = "";
@@ -70,24 +75,24 @@ namespace QL_HETHONGGIAONHANH
                         s = @"Data Source=" + exactly_server_name + ";Initial Catalog=QL_HETHONGGIAONHANH;Persist Security Info=True;User ID=TK_KHACHHANG;Password=TK_KHACHHANG12345";
                         break;
                     }
-                //// nhân viên
-                //case 2:
-                //    {
-                //        s = @"Data Source=" + exactly_server_name + ";Initial Catalog=HYT;Persist Security Info=True;User ID=HYT_NHANVIEN;Password=12345";
-                //        break;
-                //    }
-                //// nhân sự
-                //case 3:
-                //    {
-                //        s = @"Data Source=" + exactly_server_name + ";Initial Catalog=HYT;Persist Security Info=True;User ID=HYT_NHANSU;Password=12345";
-                //        break;
-                //    }
-                //// quản lý
-                //case 4:
-                //    {
-                //        s = @"Data Source=" + exactly_server_name + ";Initial Catalog=HYT;Persist Security Info=True;User ID=HYT_QL;Password=12345";
-                //        break;
-                //    }
+                    //// nhân viên
+                    //case 2:
+                    //    {
+                    //        s = @"Data Source=" + exactly_server_name + ";Initial Catalog=HYT;Persist Security Info=True;User ID=HYT_NHANVIEN;Password=12345";
+                    //        break;
+                    //    }
+                    //// nhân sự
+                    //case 3:
+                    //    {
+                    //        s = @"Data Source=" + exactly_server_name + ";Initial Catalog=HYT;Persist Security Info=True;User ID=HYT_NHANSU;Password=12345";
+                    //        break;
+                    //    }
+                    //// quản lý
+                    //case 4:
+                    //    {
+                    //        s = @"Data Source=" + exactly_server_name + ";Initial Catalog=HYT;Persist Security Info=True;User ID=HYT_QL;Password=12345";
+                    //        break;
+                    //    }
             }
             return s;
         }

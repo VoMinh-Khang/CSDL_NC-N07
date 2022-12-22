@@ -20,7 +20,7 @@ INSERT INTO TAIKHOAN(ID, USERNAME, PASS, LOAITK) VALUES
 ('TK017', 'kh2', '123456789', 4),
 ('TK018', 'kh3', '123456789', 4),
 ('TK019', 'kh4', '123456789', 4),
-('TK020', 'kh5', '123456789', 4)
+('TK020', 'kh5', '123456789', -1)
 GO
 
 -- KHACHHANG
@@ -43,6 +43,8 @@ insert dbo.DOITAC VALUES('DT005','TK005','834','jqz39886@nezid.com','Gossippa',N
 
 insert dbo.CUAHANG VALUES('001','DT001','826','Soul spectrum',N'11 lê lợi, Quận 9','20220518 00:00:00','')
 
+insert dbo.CUAHANG VALUES('002','DT001','826','Rose ne',N'212 Nguyễn Trãi Quận 1','20210102 00:00:00','')
+
 insert dbo.CUAHANG VALUES('002','DT002','756','Frost Goddess',N'55 kinh dương vương, Quận 12','20220102 00:00:00','')
 
 insert dbo.CUAHANG VALUES('003','DT003','623','Street Swing',N'22 hoàng văn thụ, Quận 6','20220518 00:00:00','')
@@ -53,11 +55,11 @@ insert dbo.CUAHANG VALUES('005','DT005','834','Apple Blossoms',N'33 cách mạng
 
 
 --MONAN
-insert into MONAN values(N'Cơm gà','',45.000,N'Đã xử lý')
-insert into MONAN values(N'Cháo gà','',35.000,N'Đã xử lý')
-insert into MONAN values(N'Cơm chiên','',50.000,N'Đã xử lý')
-insert into MONAN values(N'Phở bò','',50.000,N'Đã xử lý')
-insert into MONAN values(N'Bún riêu','',50.000,N'Đã xử lý')
+insert into MONAN values(N'Cơm gà',N'Gà được ướp',45.000,N'Đã xử lý')
+insert into MONAN values(N'Cháo gà',N'Cháo gà ta',35.000,N'Đã xử lý')
+insert into MONAN values(N'Cơm chiên',N'Có kèm sốt',50.000,N'Đã xử lý')
+insert into MONAN values(N'Phở bò',N'Bò Mỹ',50.000,N'Đã xử lý')
+insert into MONAN values(N'Bún riêu',N'Có giò',50.000,N'Đã xử lý')
 
 --TUYCHONMON
 
@@ -67,17 +69,19 @@ insert TUYCHONMON values(N'Cơm chiên','3')
 
 --THUCDON
 
-insert dbo.THUCDON VALUES('001','DT001','826',N'Cơm gà')
+insert dbo.THUCDON VALUES('001','DT001','826',N'Cơm gà',10)
 
-insert dbo.THUCDON VALUES('001','DT001','826',N'Cháo gà')
+insert dbo.THUCDON VALUES('001','DT001','826',N'Cháo gà',100)
 
-insert dbo.THUCDON VALUES('002','DT002','756',N'Cháo gà')
+insert dbo.THUCDON VALUES('002','DT002','756',N'Cháo gà',5)
 
-insert dbo.THUCDON VALUES('003','DT003','623',N'Cơm chiên')
+insert dbo.THUCDON VALUES('002','DT002','756',N'Bún riêu',100)
 
-insert dbo.THUCDON VALUES('004','DT004','983',N'Phở bò')
+insert dbo.THUCDON VALUES('003','DT003','623',N'Cơm chiên',15)
 
-insert dbo.THUCDON VALUES('005','DT005','834',N'Bún riêu')
+insert dbo.THUCDON VALUES('004','DT004','983',N'Phở bò',30)
+
+insert dbo.THUCDON VALUES('005','DT005','834',N'Bún riêu',100)
 
 
 -- NHANVIEN---
@@ -108,7 +112,7 @@ insert dbo.DONHANG values('DH001','20210618 00:00:00','Momo',N'06 võ thị sáu
 insert dbo.DONHANG values('DH002','20211202 00:00:00','COD',N'112 lê van chánh, quận bình chánh',19.2,22.000,0,N'Chờ lấy hàng','20211209 00:00:00','KH002','257438902')
 insert dbo.DONHANG values('DH003','20220407 00:00:00','ZaloPay',N'500 hoàng văn thụ, quận 9',22.000,25.1,0,N'Đang giao','20220417 00:00:00','KH003','397354429')
 insert dbo.DONHANG values('DH004','20210509 00:00:00','Momo',N'115 võ thị sáu, quận bình 7',21.500,24.000,0,N'Đã giao','20210519 00:00:00','KH004','232763452')
-insert dbo.DONHANG values('DH005','20210224 00:00:00','COD',N'15 Hai bà trưng, quận bình 8',29.000,29.000,0,N'Chờ lấy hàng','20210226 00:00:00','KH005','256478443')
+insert dbo.DONHANG values('DH005','20210224 00:00:00','COD',N'15 Hai bà trưng, quận bình 8',29.000,29.000,0,N'Đang chuẩn bị','20210226 00:00:00','KH005','256478443')
 
 --CT_DONHANG
 
@@ -127,113 +131,112 @@ INSERT INTO PHANHOI(TENMON,MAKHACH,DANHGIA,BINHLUAN) VALUES
 
 GO
 
+--tạo role người dùng
+Exec sp_addrole 'DOITAC'
+Exec sp_addrole 'KHACHHANG'
+Exec sp_addrole 'TAIXE'
+Exec sp_addrole 'NHANVIEN'
+Exec sp_addrole 'QUANTRI'
 
-----tạo role người dùng
---Exec sp_addrole 'DOITAC'
---Exec sp_addrole 'KHACHHANG'
---Exec sp_addrole 'TAIXE'
---Exec sp_addrole 'NHANVIEN'
---Exec sp_addrole 'QUANTRI'
+--PHÂN QUYỀN ĐỐI TÁC
+GRANT SELECT
+ON DOITAC
+TO DOITAC
 
-----PHÂN QUYỀN ĐỐI TÁC
---GRANT SELECT
---ON DOITAC
---TO DOITAC
+GRANT SELECT, UPDATE
+ON CUAHANG
+TO DOITAC
 
---GRANT SELECT, UPDATE
---ON CUAHANG
---TO DOITAC
+GRANT INSERT, SELECT, UPDATE, DELETE
+ON THUCDON
+TO DOITAC
 
---GRANT INSERT, SELECT, UPDATE, DELETE
---ON THUCDON
---TO DOITAC
+GRANT INSERT, SELECT, UPDATE, DELETE
+ON MONAN
+TO DOITAC
 
---GRANT INSERT, SELECT, UPDATE, DELETE
---ON MONAN
---TO DOITAC
+GRANT SELECT
+ON DONHANG
+TO DOITAC
 
---GRANT SELECT
---ON DONHANG
---TO DOITAC
+GRANT SELECT
+ON DONHANG(TINHTRANG)
+TO DOITAC
 
---GRANT SELECT
---ON DONHANG(TINHTRANG)
---TO DOITAC
+GRANT SELECT 
+ON PHANHOI
+TO DOITAC
 
---GRANT SELECT 
---ON PHANHOI
---TO DOITAC
+--PHÂN QUYỀN QUẢN TRỊ
+ALTER ROLE [db_owner] ADD MEMBER QUANTRI
 
-----PHÂN QUYỀN QUẢN TRỊ
---ALTER ROLE [db_owner] ADD MEMBER QUANTRI
+--PHÂN QUYỀN KHÁCH HÀNG
+grant update, select
+on KHACHHANG
+to KHACHHANG
 
-----PHÂN QUYỀN KHÁCH HÀNG
---grant update, select
---on KHACHHANG
---to KHACHHANG
+grant select
+on DOITAC
+to KHACHHANG
 
---grant select
---on DOITAC
---to KHACHHANG
+grant select
+on CUAHANG
+to KHACHHANG
 
---grant select
---on CUAHANG
---to KHACHHANG
+grant select
+on MONAN
+to KHACHHANG
 
---grant select
---on MONAN
---to KHACHHANG
+grant select
+on THUCDON 
+to KHACHHANG
 
---grant select
---on THUCDON 
---to KHACHHANG
+grant select
+on TUYCHONMON
+to KHACHHANG
 
---grant select
---on TUYCHONMON
---to KHACHHANG
+grant select
+on DONHANG
+to KHACHHANG
 
---grant select
---on DONHANG
---to KHACHHANG
+grant update
+on DONHANG(TINHTRANG)
+to KHACHHANG
 
---grant update
---on DONHANG(TINHTRANG)
---to KHACHHANG
+grant select
+on CT_DONHANG
+to KHACHHANG
 
---grant select
---on CT_DONHANG
---to KHACHHANG
+    -- PHÂN QUYỀN NHÂN VIÊN
+Grant INSERT,SELECT
+on DOITAC
+to NHANVIEN
 
---    -- PHÂN QUYỀN NHÂN VIÊN
---Grant INSERT,SELECT
---on DOITAC
---to NHANVIEN
+Grant UPDATE
+on DOITAC(NGUOIDAIDIEN)
+to NHANVIEN
 
---Grant UPDATE
---on DOITAC(NGUOIDAIDIEN)
---to NHANVIEN
+Grant SELECT
+on HOPDONG
+to NHANVIEN
 
---Grant SELECT
---on HOPDONG
---to NHANVIEN
+Grant SELECT, UPDATE
+on HOPDONG(THOIGIANHIEULUC)
+to NHANVIEN
 
---Grant SELECT, UPDATE
---on HOPDONG(THOIGIANHIEULUC)
---to NHANVIEN
+Grant UPDATE
+on HOPDONG(MADT)
+to NHANVIEN
 
---Grant UPDATE
---on HOPDONG(MADT)
---to NHANVIEN
+    -- PHÂN QUYỀN TÀI XẾ
+Grant INSERT,SELECT,UPDATE
+on TAIXE
+to TAIXE
 
---    -- PHÂN QUYỀN TÀI XẾ
---Grant INSERT,SELECT,UPDATE
---on TAIXE
---to TAIXE
+Grant SELECT
+on DONHANG
+to TAIXE
 
---Grant SELECT
---on DONHANG
---to TAIXE
-
---Grant UPDATE
---on DONHANG(TINHTRANG)
---to TAIXE
+Grant UPDATE
+on DONHANG(TINHTRANG)
+to TAIXE

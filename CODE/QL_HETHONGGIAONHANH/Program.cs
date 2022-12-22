@@ -1,3 +1,5 @@
+
+
 namespace QL_HETHONGGIAONHANH
 {
     internal static class Program

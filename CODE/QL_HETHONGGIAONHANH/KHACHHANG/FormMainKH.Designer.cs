@@ -34,10 +34,10 @@
             this.btn_thoat_KH = new System.Windows.Forms.Button();
             this.btn_muahang_KH = new System.Windows.Forms.Button();
             this.btn_giohang_KH = new System.Windows.Forms.Button();
-            this.panelChildForm_KH = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnLichSuMuaHang = new System.Windows.Forms.Button();
+            this.panelChildForm_KH = new System.Windows.Forms.Panel();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.panelMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -106,42 +106,17 @@
             this.btn_giohang_KH.UseVisualStyleBackColor = true;
             this.btn_giohang_KH.Click += new System.EventHandler(this.btn_giohang_KH_Click);
             // 
-            // panelChildForm_KH
-            // 
-            this.panelChildForm_KH.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.panelChildForm_KH.Enabled = false;
-            this.panelChildForm_KH.Location = new System.Drawing.Point(186, 0);
-            this.panelChildForm_KH.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.panelChildForm_KH.Name = "panelChildForm_KH";
-            this.panelChildForm_KH.Size = new System.Drawing.Size(930, 681);
-            this.panelChildForm_KH.TabIndex = 6;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.textBox1.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.textBox1.Location = new System.Drawing.Point(8, 99);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(166, 85);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.panelMenu.Controls.Add(this.textBox1);
+            this.panelMenu.Controls.Add(this.textBox2);
+            this.panelMenu.Controls.Add(this.label1);
             this.panelMenu.Controls.Add(this.btnLichSuMuaHang);
             this.panelMenu.Controls.Add(this.btn_giohang_KH);
             this.panelMenu.Controls.Add(this.btn_muahang_KH);
             this.panelMenu.Controls.Add(this.btn_thoat_KH);
             this.panelMenu.Controls.Add(this.btn_dangxuat_KH);
             this.panelMenu.Controls.Add(this.panel1);
-            this.panelMenu.Controls.Add(this.label1);
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panelMenu.Name = "panelMenu";
@@ -158,6 +133,27 @@
             this.btnLichSuMuaHang.Text = "Lịch sử mua hàng";
             this.btnLichSuMuaHang.UseVisualStyleBackColor = true;
             this.btnLichSuMuaHang.Click += new System.EventHandler(this.btnLichSuMuaHang_Click_1);
+            // 
+            // panelChildForm_KH
+            // 
+            this.panelChildForm_KH.Location = new System.Drawing.Point(186, 0);
+            this.panelChildForm_KH.Name = "panelChildForm_KH";
+            this.panelChildForm_KH.Size = new System.Drawing.Size(929, 681);
+            this.panelChildForm_KH.TabIndex = 5;
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox2.Enabled = false;
+            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.textBox2.Location = new System.Drawing.Point(8, 99);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(166, 85);
+            this.textBox2.TabIndex = 0;
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // FormMainKH
             // 
@@ -182,9 +178,9 @@
         private Button btn_thoat_KH;
         private Button btn_muahang_KH;
         private Button btn_giohang_KH;
-        private Panel panelChildForm_KH;
         private Panel panelMenu;
         private Button btnLichSuMuaHang;
-        private TextBox textBox1;
+        private Panel panelChildForm_KH;
+        private TextBox textBox2;
     }
 }

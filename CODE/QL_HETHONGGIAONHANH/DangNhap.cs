@@ -26,8 +26,8 @@ namespace QL_HETHONGGIAONHANH
 
         private void resetvalue_DN()
         {
-            txtUsername.Text = "";
-            txtPassword.Text = "";
+            txtUsername.Text = "kh1";
+            txtPassword.Text = "123456789";
         }
 
         private void DangNhap_Load(object sender, EventArgs e)
@@ -35,7 +35,7 @@ namespace QL_HETHONGGIAONHANH
             //Mở kết nối
             //Functions.Connect(user_type);
             Functions.Connect(Functions.get_ConnectString(loaitk));
-
+            //Functions.Connect(Functions.get_ConnectString());
             resetvalue_DN();
         }
 
@@ -45,9 +45,10 @@ namespace QL_HETHONGGIAONHANH
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
             // set kiểu dữ liệu
-            cmd.Parameters.Add("@USERNAME", SqlDbType.VarChar, 50);
-            cmd.Parameters.Add("@PASS", SqlDbType.VarChar, 50);
+            cmd.Parameters.Add("@USERNAME", SqlDbType.VarChar, 20);
+            cmd.Parameters.Add("@PASS", SqlDbType.VarChar, 20);
             cmd.Parameters.Add("@ID", SqlDbType.Char,5).Direction = ParameterDirection.Output;
+            //thiếu: chỗ này đổi
             cmd.Parameters.Add("@LOAITK", SqlDbType.Int).Direction = ParameterDirection.Output;
 
             // set giá trị
@@ -60,45 +61,45 @@ namespace QL_HETHONGGIAONHANH
             loaitk = Convert.ToInt32(cmd.Parameters["@LOAITK"].Value);
         }
 
-        //private int Run_SP_KTTenDangNhap()
-        //{
-        //    SqlCommand cmd = new SqlCommand("SP_KTTenDangNhap", Functions.Con);
-        //    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+        private int Run_SP_KTTenDangNhap()
+        {
+            SqlCommand cmd = new SqlCommand("USP_CHECKUSERNAME", Functions.Con);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-        //    // set kiểu dữ liệu
-        //    cmd.Parameters.Add("@username", SqlDbType.VarChar, 50);
+            // set kiểu dữ liệu
+            cmd.Parameters.Add("@USERNAME", SqlDbType.VarChar, 20);
 
-        //    var returnParameter = cmd.Parameters.Add("@ReturnVal", SqlDbType.Int);
-        //    returnParameter.Direction = ParameterDirection.ReturnValue;
+            var returnParameter = cmd.Parameters.Add("@ReturnVal", SqlDbType.Int);
+            returnParameter.Direction = ParameterDirection.ReturnValue;
 
-        //    // set giá trị
-        //    cmd.Parameters["@username"].Value = username;
-           
-        //    cmd.ExecuteNonQuery();
+            // set giá trị
+            cmd.Parameters["@USERNAME"].Value = username;
 
-        //    return Int32.Parse(returnParameter.Value.ToString());
-        //}
+            cmd.ExecuteNonQuery();
 
-        //private int Run_SP_KTMatKhau()
-        //{
-        //    SqlCommand cmd = new SqlCommand("SP_KTMatKhau", Functions.Con);
-        //    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            return Int32.Parse(returnParameter.Value.ToString());
+        }
 
-        //    // set kiểu dữ liệu
-        //    cmd.Parameters.Add("@username", SqlDbType.VarChar, 50);
-        //    cmd.Parameters.Add("@password", SqlDbType.VarChar, 50);
+        public int Run_SP_KTMatKhau()
+        {
+            SqlCommand cmd = new SqlCommand("USP_CHECKPASS", Functions.Con);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-        //    var returnParameter = cmd.Parameters.Add("@ReturnVal", SqlDbType.Int);
-        //    returnParameter.Direction = ParameterDirection.ReturnValue;
+            // set kiểu dữ liệu
+            cmd.Parameters.Add("@USERNAME", SqlDbType.VarChar, 20);
+            cmd.Parameters.Add("@PASS", SqlDbType.VarChar, 20);
 
-        //    // set giá trị
-        //    cmd.Parameters["@username"].Value = username;
-        //    cmd.Parameters["@password"].Value = password;
+            var returnParameter = cmd.Parameters.Add("@ReturnVal", SqlDbType.Int);
+            returnParameter.Direction = ParameterDirection.ReturnValue;
 
-        //    cmd.ExecuteNonQuery();
+            // set giá trị
+            cmd.Parameters["@USERNAME"].Value = username;
+            cmd.Parameters["@PASS"].Value = password;
 
-        //    return Int32.Parse(returnParameter.Value.ToString());
-        //}
+            cmd.ExecuteNonQuery();
+
+            return Int32.Parse(returnParameter.Value.ToString());
+        }
 
         // xử lí mở form tương ứng từng loại acc      
         public void open_FormMain(object obj)
@@ -112,7 +113,7 @@ namespace QL_HETHONGGIAONHANH
                     }
                 case 4:
                     {
-                        Application.Run(new FormMainKH());
+                        Application.Run(new FormMainKH(id));
                         break;
                     }
                 //case 2:
@@ -147,24 +148,23 @@ namespace QL_HETHONGGIAONHANH
                 return;
             }
 
-            //// Kiểm tra tên đăng nhập           
-            //if (Run_SP_KTTenDangNhap() == 0)
-            //{
-            //    MessageBox.Show("Tên đăng nhập không tồn tại !!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //    txtUsername.Focus();
-            //    return;
-            //}
+            // Kiểm tra tên đăng nhập           
+            if (Run_SP_KTTenDangNhap() == 0)
+            {
+                MessageBox.Show("Tên đăng nhập không tồn tại !!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtUsername.Focus();
+                return;
+            }
 
-            //// Kiểm tra mật khẩu ứng với tên đăng nhập
-            //if (Run_SP_KTMatKhau() == 0)
-            //{
-            //    MessageBox.Show("Mật khẩu không chính xác !!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);           
-            //    txtPassword.Text = "";
-            //    txtPassword.Focus();
-            //    return;
-            //}
+            //Kiểm tra mật khẩu ứng với tên đăng nhập
+            if (Run_SP_KTMatKhau() == 0)
+            {
+                MessageBox.Show("Mật khẩu không chính xác !!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtPassword.Text = "";
+                txtPassword.Focus();
+                return;
+            }
 
-            // chạy SP đăng nhập, lấy MAACC, LOAIACC
             Run_SP_DangNhap();
             
             // nếu acc này bị khóa
@@ -179,8 +179,8 @@ namespace QL_HETHONGGIAONHANH
 
             // kết nối với database tương ứng với loại acc
 
-            Functions.Connect(Functions.get_ConnectString(loaitk));
-
+            //Functions.Connect(Functions.get_ConnectString(loaitk));
+            Functions.Connect(Functions.get_ConnectString());
             // mở giao diện tương ứng từng loại acc                 
             this.Close();
             t = new Thread(open_FormMain);

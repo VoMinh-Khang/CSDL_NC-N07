@@ -5,8 +5,8 @@ GO
 
 CREATE TABLE TAIKHOAN (
    ID char(5) not null,
-   USERNAME char(20) not null,
-   PASS char(20) not null,
+   USERNAME varchar(20) not null,
+   PASS varchar(20) not null,
    LOAITK int null,
    PRIMARY KEY (ID)
 )
@@ -47,7 +47,8 @@ CREATE TABLE THUCDON
 	MACUAHANG varchar(10) NOT NULL,
 	MADT varchar(10) NOT NULL,
 	MASOTHUE varchar(10) NOT NULL,
-	TENMON nvarchar(80) NOT NULL
+	TENMON nvarchar(80) NOT NULL,
+	SOLUONGTON int,
 	PRIMARY KEY (MACUAHANG,MADT,MASOTHUE,TENMON)
 )
 CREATE TABLE CUAHANG
@@ -161,7 +162,7 @@ ADD CONSTRAINT FK_TAIXE_TAIKHOAN
 FOREIGN KEY (TAIKHOAN)
 REFERENCES TAIKHOAN (ID)
 
-ALTER TABLE DONHANG ADD CHECK (TINHTRANG IN (N'Chờ xác nhận', N'Chờ lấy hàng', N'Đang giao', N'Đã giao'))
+ALTER TABLE DONHANG ADD CHECK (TINHTRANG IN (N'Chờ xác nhận',N'Đang chuẩn bị', N'Chờ lấy hàng', N'Đang giao', N'Đã giao'))
 
 ALTER TABLE DONHANG
 ADD CONSTRAINT FK_DONHANG_KHACHHANG
