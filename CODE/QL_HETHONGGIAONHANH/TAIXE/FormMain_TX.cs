@@ -129,5 +129,23 @@ namespace QL_HETHONGGIAONHANH
         {
 
         }
+
+        public void open_FormDangNhap(object obj)
+        {
+            Application.Run(new DangNhap());
+        }
+        private void btn_DangXuat_TX_Click(object sender, EventArgs e)
+        {
+
+            this.Close();
+            t = new Thread(open_FormDangNhap);
+            t.SetApartmentState(ApartmentState.STA);
+            t.Start();
+        }
+
+        private void btn_Thoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

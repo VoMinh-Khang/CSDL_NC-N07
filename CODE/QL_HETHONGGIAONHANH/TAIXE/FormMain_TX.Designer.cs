@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain_TX));
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btn_DangXuat_TX = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.textBox_TenTX = new System.Windows.Forms.TextBox();
             this.btn_TheoDoiThuNhap = new System.Windows.Forms.Button();
@@ -37,6 +37,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelChildForm_TX = new System.Windows.Forms.Panel();
+            this.btn_Thoat = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -44,6 +45,8 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.panelMenu.Controls.Add(this.btn_Thoat);
+            this.panelMenu.Controls.Add(this.btn_DangXuat_TX);
             this.panelMenu.Controls.Add(this.panel2);
             this.panelMenu.Controls.Add(this.textBox_TenTX);
             this.panelMenu.Controls.Add(this.btn_TheoDoiThuNhap);
@@ -55,6 +58,19 @@
             this.panelMenu.Size = new System.Drawing.Size(150, 500);
             this.panelMenu.TabIndex = 0;
             this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // btn_DangXuat_TX
+            // 
+            this.btn_DangXuat_TX.BackColor = System.Drawing.Color.Transparent;
+            this.btn_DangXuat_TX.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.btn_DangXuat_TX.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_DangXuat_TX.Location = new System.Drawing.Point(-3, 341);
+            this.btn_DangXuat_TX.Name = "btn_DangXuat_TX";
+            this.btn_DangXuat_TX.Size = new System.Drawing.Size(150, 60);
+            this.btn_DangXuat_TX.TabIndex = 4;
+            this.btn_DangXuat_TX.Text = "Đăng xuất";
+            this.btn_DangXuat_TX.UseVisualStyleBackColor = false;
+            this.btn_DangXuat_TX.Click += new System.EventHandler(this.btn_DangXuat_TX_Click);
             // 
             // panel2
             // 
@@ -80,7 +96,7 @@
             this.btn_TheoDoiThuNhap.BackColor = System.Drawing.Color.Transparent;
             this.btn_TheoDoiThuNhap.Cursor = System.Windows.Forms.Cursors.Cross;
             this.btn_TheoDoiThuNhap.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_TheoDoiThuNhap.Location = new System.Drawing.Point(0, 320);
+            this.btn_TheoDoiThuNhap.Location = new System.Drawing.Point(-3, 275);
             this.btn_TheoDoiThuNhap.Name = "btn_TheoDoiThuNhap";
             this.btn_TheoDoiThuNhap.Size = new System.Drawing.Size(150, 60);
             this.btn_TheoDoiThuNhap.TabIndex = 3;
@@ -93,7 +109,7 @@
             this.btn_DSDH.BackColor = System.Drawing.Color.Transparent;
             this.btn_DSDH.Cursor = System.Windows.Forms.Cursors.Cross;
             this.btn_DSDH.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_DSDH.Location = new System.Drawing.Point(0, 227);
+            this.btn_DSDH.Location = new System.Drawing.Point(-3, 209);
             this.btn_DSDH.Name = "btn_DSDH";
             this.btn_DSDH.Size = new System.Drawing.Size(153, 60);
             this.btn_DSDH.TabIndex = 2;
@@ -114,7 +130,6 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.InitialImage = null;
             this.pictureBox1.Location = new System.Drawing.Point(32, 3);
             this.pictureBox1.Name = "pictureBox1";
@@ -130,6 +145,19 @@
             this.panelChildForm_TX.Size = new System.Drawing.Size(1176, 497);
             this.panelChildForm_TX.TabIndex = 2;
             this.panelChildForm_TX.Paint += new System.Windows.Forms.PaintEventHandler(this.panelChildForm_TX_Paint);
+            // 
+            // btn_Thoat
+            // 
+            this.btn_Thoat.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Thoat.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.btn_Thoat.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_Thoat.Location = new System.Drawing.Point(0, 407);
+            this.btn_Thoat.Name = "btn_Thoat";
+            this.btn_Thoat.Size = new System.Drawing.Size(150, 60);
+            this.btn_Thoat.TabIndex = 5;
+            this.btn_Thoat.Text = "Thoát";
+            this.btn_Thoat.UseVisualStyleBackColor = false;
+            this.btn_Thoat.Click += new System.EventHandler(this.btn_Thoat_Click);
             // 
             // FormMain_TX
             // 
@@ -158,5 +186,7 @@
         private Panel panelChildForm_TX;
         private TextBox textBox_TenTX;
         private Panel panel2;
+        private Button btn_DangXuat_TX;
+        private Button btn_Thoat;
     }
 }
