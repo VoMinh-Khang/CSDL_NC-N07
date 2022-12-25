@@ -25,12 +25,19 @@ namespace QL_HETHONGGIAONHANH.TAIXE
 
             string sql = "USP_TX_THEODOITHUNHAP '" + cmnd_TX + "'";
             tbl_ThuNhapTX = Functions.GetDataToTable(sql);
+
+            if(tbl_ThuNhapTX.Rows.Count == 0)
+            {
+                MessageBox.Show("Bạn chưa nhận đơn hàng nào cả", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             dataGridView_TXTheoDoiThuNhap.DataSource = tbl_ThuNhapTX;
             
 
             //set font
             dataGridView_TXTheoDoiThuNhap.Font = new Font("Time New Roman", 12);
-            dataGridView_TXTheoDoiThuNhap.Columns[0].HeaderText = "CMND TX";
+            dataGridView_TXTheoDoiThuNhap.Columns[0].HeaderText = "ID đơn hàng";
             dataGridView_TXTheoDoiThuNhap.Columns[1].HeaderText = "Thu nhập";
             dataGridView_TXTheoDoiThuNhap.Columns[2].HeaderText = "Ngày giao";
 
