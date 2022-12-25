@@ -37,7 +37,8 @@
             // 
             // btn_muangay
             // 
-            this.btn_muangay.Location = new System.Drawing.Point(637, 508);
+            this.btn_muangay.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_muangay.Location = new System.Drawing.Point(627, 499);
             this.btn_muangay.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_muangay.Name = "btn_muangay";
             this.btn_muangay.Size = new System.Drawing.Size(107, 38);
@@ -47,7 +48,8 @@
             // 
             // btn_TiepTuc
             // 
-            this.btn_TiepTuc.Location = new System.Drawing.Point(753, 508);
+            this.btn_TiepTuc.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_TiepTuc.Location = new System.Drawing.Point(743, 499);
             this.btn_TiepTuc.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_TiepTuc.Name = "btn_TiepTuc";
             this.btn_TiepTuc.Size = new System.Drawing.Size(109, 38);
@@ -70,10 +72,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(393, 42);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(327, 38);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 25);
+            this.label1.Size = new System.Drawing.Size(182, 45);
             this.label1.TabIndex = 3;
             this.label1.Text = "GIỎ HÀNG";
             // 

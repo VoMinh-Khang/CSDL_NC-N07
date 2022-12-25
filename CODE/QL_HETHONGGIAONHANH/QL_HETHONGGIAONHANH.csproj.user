@@ -7,6 +7,27 @@
     <Compile Update="DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="DOITAC\DANGKYDOITAC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DOITAC\FormMainDOITAC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DOITAC\LAPHOPDONG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DOITAC\QUANLYCUAHANG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DOITAC\QUANLYDONHANG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DOITAC\QUANLYSOLIEU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DOITAC\QUANLYTHUCDON.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="KHACHHANG\CT_DonHang.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -63,10 +63,10 @@ namespace QL_HETHONGGIAONHANH
                         s = @"Data Source=" + exactly_server_name + ";Initial Catalog=QL_HETHONGGIAONHANH;Persist Security Info=True;User ID=TK_VODANH;Password=TK_VODANH123";
                         break;
                     }
-                // quản trị
-                case 0:
+                // đối tác
+                case 1:
                     {
-                        s = @"Data Source=" + exactly_server_name + ";Initial Catalog=HYT;Persist Security Info=True;User ID=HYT_QT;Password=HYT_QT12345";
+                        s = @"Data Source=" + exactly_server_name + ";Initial Catalog=QL_HETHONGGIAONHANH;Persist Security Info=True;User ID=TK_DOITAC;Password=TK_DOITAC12345";
                         break;
                     }
                 // khách hàng
@@ -75,24 +75,7 @@ namespace QL_HETHONGGIAONHANH
                         s = @"Data Source=" + exactly_server_name + ";Initial Catalog=QL_HETHONGGIAONHANH;Persist Security Info=True;User ID=TK_KHACHHANG;Password=TK_KHACHHANG12345";
                         break;
                     }
-                    //// nhân viên
-                    //case 2:
-                    //    {
-                    //        s = @"Data Source=" + exactly_server_name + ";Initial Catalog=HYT;Persist Security Info=True;User ID=HYT_NHANVIEN;Password=12345";
-                    //        break;
-                    //    }
-                    //// nhân sự
-                    //case 3:
-                    //    {
-                    //        s = @"Data Source=" + exactly_server_name + ";Initial Catalog=HYT;Persist Security Info=True;User ID=HYT_NHANSU;Password=12345";
-                    //        break;
-                    //    }
-                    //// quản lý
-                    //case 4:
-                    //    {
-                    //        s = @"Data Source=" + exactly_server_name + ";Initial Catalog=HYT;Persist Security Info=True;User ID=HYT_QL;Password=12345";
-                    //        break;
-                    //    }
+                
             }
             return s;
         }
@@ -144,15 +127,6 @@ namespace QL_HETHONGGIAONHANH
             //Giải phóng bộ nhớ
             cmd.Dispose();
             cmd = null;
-        }
-        public static void FillCombo(string sql, ComboBox cbo, string ma, string ten) // đổ dữ liệu vào comboBox
-        {
-            SqlDataAdapter dap = new SqlDataAdapter(sql, Con);
-            DataTable table = new DataTable();
-            dap.Fill(table);
-            cbo.DataSource = table;
-            cbo.ValueMember = ma;
-            cbo.DisplayMember = ten;
         }
 
         public static string GetFieldValues(string sql) // lấy dữ liệu từ câu lệnh sql

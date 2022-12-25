@@ -46,10 +46,10 @@ namespace QL_HETHONGGIAONHANH
         {
             Application.Run(new DangNhap());
         }
-        //public void open_FormDangKyDoiTac(object obj)
-        //{
-        //    Application.Run(new DANGKYDOITAC());
-        //}
+        public void open_FormDANGKYDOITAC(object obj)
+        {
+            Application.Run(new DANGKYDOITAC(username, password, LOAITAIKHOAN));
+        }
         private void btn_quaylai_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -90,7 +90,8 @@ namespace QL_HETHONGGIAONHANH
             if (txtUsername.Text.Trim().Length == 0 |
                 txtPassword.Text.Trim().Length == 0 |
                 checkBox_KhachHang.Checked == false
-                && checkBox_TaiXe.Checked == false)
+                && checkBox_TaiXe.Checked == false
+                && checkBox_doitac.Checked == false)
                 
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ dữ liệu !!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -125,6 +126,7 @@ namespace QL_HETHONGGIAONHANH
             if (checkBox_KhachHang.Checked == true)
             {
                 checkBox_TaiXe.Checked = false;
+                checkBox_doitac.Checked = false;
                 LOAITAIKHOAN = "4";
                 t = new Thread(open_FormKHDangKyTT);
             }
@@ -132,8 +134,15 @@ namespace QL_HETHONGGIAONHANH
             {
                 //t = new Thread(open_FormDangKyDoiTac);
                 
-            }    
-           
+            }
+            else if(checkBox_doitac.Checked == true)
+            {
+                checkBox_TaiXe.Checked = false;
+                checkBox_KhachHang.Checked = false;
+                LOAITAIKHOAN = "1";
+                t = new Thread(open_FormDANGKYDOITAC);
+            }
+
             t.SetApartmentState(ApartmentState.STA);
             t.Start();
         }

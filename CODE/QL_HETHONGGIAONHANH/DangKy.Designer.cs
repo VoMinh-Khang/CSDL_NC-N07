@@ -36,9 +36,10 @@
             this.button_showPass = new System.Windows.Forms.Button();
             this.btn_dangky = new System.Windows.Forms.Button();
             this.btn_quaylai = new System.Windows.Forms.Button();
-            this.checkBox_TaiXe = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.checkBox_TaiXe = new System.Windows.Forms.CheckBox();
+            this.checkBox_doitac = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -134,17 +135,6 @@
             this.btn_quaylai.UseVisualStyleBackColor = false;
             this.btn_quaylai.Click += new System.EventHandler(this.btn_quaylai_Click);
             // 
-            // checkBox_TaiXe
-            // 
-            this.checkBox_TaiXe.AutoSize = true;
-            this.checkBox_TaiXe.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.checkBox_TaiXe.Location = new System.Drawing.Point(398, 326);
-            this.checkBox_TaiXe.Name = "checkBox_TaiXe";
-            this.checkBox_TaiXe.Size = new System.Drawing.Size(112, 42);
-            this.checkBox_TaiXe.TabIndex = 22;
-            this.checkBox_TaiXe.Text = "Tài xế";
-            this.checkBox_TaiXe.UseVisualStyleBackColor = true;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -167,14 +157,37 @@
             this.label4.TabIndex = 24;
             this.label4.Text = "ĐĂNG KÝ TÀI KHOẢN MỚI";
             // 
+            // checkBox_TaiXe
+            // 
+            this.checkBox_TaiXe.AutoSize = true;
+            this.checkBox_TaiXe.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.checkBox_TaiXe.Location = new System.Drawing.Point(405, 326);
+            this.checkBox_TaiXe.Name = "checkBox_TaiXe";
+            this.checkBox_TaiXe.Size = new System.Drawing.Size(112, 42);
+            this.checkBox_TaiXe.TabIndex = 25;
+            this.checkBox_TaiXe.Text = "Tài xế";
+            this.checkBox_TaiXe.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_doitac
+            // 
+            this.checkBox_doitac.AutoSize = true;
+            this.checkBox_doitac.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.checkBox_doitac.Location = new System.Drawing.Point(570, 326);
+            this.checkBox_doitac.Name = "checkBox_doitac";
+            this.checkBox_doitac.Size = new System.Drawing.Size(130, 42);
+            this.checkBox_doitac.TabIndex = 26;
+            this.checkBox_doitac.Text = "Đối tác";
+            this.checkBox_doitac.UseVisualStyleBackColor = true;
+            // 
             // DangKy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(811, 510);
+            this.Controls.Add(this.checkBox_doitac);
+            this.Controls.Add(this.checkBox_TaiXe);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.checkBox_TaiXe);
             this.Controls.Add(this.btn_dangky);
             this.Controls.Add(this.btn_quaylai);
             this.Controls.Add(this.button_showPass);
@@ -201,8 +214,9 @@
         private Button button_showPass;
         private Button btn_dangky;
         private Button btn_quaylai;
-        private CheckBox checkBox_TaiXe;
         private Label label3;
         private Label label4;
+        private CheckBox checkBox_TaiXe;
+        private CheckBox checkBox_doitac;
     }
 }

@@ -26,7 +26,7 @@ namespace QL_HETHONGGIAONHANH
 
         private void resetvalue_DN()
         {
-            txtUsername.Text = "kh1";
+            txtUsername.Text = "dt1";
             txtPassword.Text = "123456789";
         }
 
@@ -35,7 +35,6 @@ namespace QL_HETHONGGIAONHANH
             //Mở kết nối
             //Functions.Connect(user_type);
             Functions.Connect(Functions.get_ConnectString(loaitk));
-            //Functions.Connect(Functions.get_ConnectString());
             resetvalue_DN();
         }
 
@@ -48,7 +47,6 @@ namespace QL_HETHONGGIAONHANH
             cmd.Parameters.Add("@USERNAME", SqlDbType.VarChar, 20);
             cmd.Parameters.Add("@PASS", SqlDbType.VarChar, 20);
             cmd.Parameters.Add("@ID", SqlDbType.Char,5).Direction = ParameterDirection.Output;
-            //thiếu: chỗ này đổi
             cmd.Parameters.Add("@LOAITK", SqlDbType.Int).Direction = ParameterDirection.Output;
 
             // set giá trị
@@ -106,9 +104,9 @@ namespace QL_HETHONGGIAONHANH
         {
             switch (loaitk)
             {
-                case 0:
+                case 1:
                     {
-                       // Application.Run(new FormMain_QT());
+                        Application.Run(new FormMainDOITAC(id));
                         break;
                     }
                 case 4:
