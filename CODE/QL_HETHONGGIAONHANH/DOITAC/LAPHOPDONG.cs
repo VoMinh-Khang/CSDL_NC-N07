@@ -94,7 +94,7 @@ namespace QL_HETHONGGIAONHANH
         
         private void LAPHOPDONG_Load(object sender, EventArgs e)
         {
-            //Functions.Connect(Functions.get_ConnectString());
+            //
             string sql = "Select * " + " FROM HOPDONG";
             tbl_HOPDONG = Functions.GetDataToTable(sql);
             dataGridViewLHD.DataSource = tbl_HOPDONG;

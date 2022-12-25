@@ -26,7 +26,7 @@ namespace QL_HETHONGGIAONHANH
 
         private void resetvalue_DN()
         {
-            txtUsername.Text = "dt1";
+            txtUsername.Text = "nv1";
             txtPassword.Text = "123456789";
         }
 
@@ -109,27 +109,25 @@ namespace QL_HETHONGGIAONHANH
                         Application.Run(new FormMainDOITAC(id));
                         break;
                     }
+
+                
+                case 2:
+                    {
+
+                        Application.Run(new FormMain_TX(id));
+                        break;
+                    }
+                case 3:
+                    {
+                        Application.Run(new FormMain_NV());
+                        break;
+                    }
                 case 4:
                     {
                         Application.Run(new FormMainKH(id));
                         break;
                     }
-                //case 2:
-                //    {
-                //        Application.Run(new FormMain_NV(id));
-                //        break;
-                //    }
-                //case 3:
-                //    {
-                //        Application.Run(new FormMain_NS());
-                //        break;
-                //    }
-                //case 4:
-                //    {
-                //        Application.Run(new FormMain_QL());
-                //        break;
-                //    }
-                
+
             }
         }
 

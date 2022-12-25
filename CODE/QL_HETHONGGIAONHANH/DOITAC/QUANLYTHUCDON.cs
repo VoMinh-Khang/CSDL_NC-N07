@@ -55,7 +55,7 @@ namespace QL_HETHONGGIAONHANH
         
         private void QUANLYTHUCDON_Load(object sender, EventArgs e)
         {
-           // Functions.Connect(Functions.get_ConnectString());
+           // 
             string sql = "Select * " + " FROM MONAN";
             tbl_THUCDON = Functions.GetDataToTable(sql);
             dataGridViewQLTD.DataSource = tbl_THUCDON;
@@ -101,7 +101,7 @@ namespace QL_HETHONGGIAONHANH
 
         private void LoadDSM_Click(object sender, EventArgs e)
         {
-            //Functions.Connect(Functions.get_ConnectString());
+            //
             string sql = "Select * " + " FROM MONAN";
             tbl_THUCDON = Functions.GetDataToTable(sql);
             dataGridViewQLTD.DataSource = tbl_THUCDON;

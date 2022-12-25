@@ -22,7 +22,6 @@ INSERT INTO TAIKHOAN(ID, USERNAME, PASS, LOAITK) VALUES
 ('TK019', 'kh4', '123456789', 4),
 ('TK020', 'kh5', '123456789', -1)
 GO
-
 --KHUVUC
 INSERT INTO [KHUVUC] VALUES ('kv1', N'Quận 9'),
 							('kv2', N'Quận 1'),
@@ -128,7 +127,7 @@ insert dbo.CT_DONHANG VALUES('DH001','001','DT001',N'Cơm gà',6, NULL)
 insert dbo.CT_DONHANG VALUES('DH001','001','DT001',N'Cháo gà',2, NULL)
 insert dbo.CT_DONHANG VALUES('DH002','002','DT002',N'Cháo gà',3, NULL)
 insert dbo.CT_DONHANG VALUES('DH003','002','DT002',N'bún riêu',5, NULL)
-insert dbo.CT_DONHANG VALUES('DH004','001','DT001',N'Phở bò',3, NULL)
+insert dbo.CT_DONHANG VALUES('DH004','004','DT004',N'Phở bò',3, NULL)
 insert dbo.CT_DONHANG VALUES('DH005','003','DT003',N'Cơm chiên',2, NULL)
 
 --PHANHOI
@@ -137,114 +136,3 @@ INSERT INTO PHANHOI(TENMON,MAKHACH,DANHGIA,BINHLUAN) VALUES
 ('Bún riêu','KH001','LIKE',N'Rất ngon'),
 ('Cháo gà','KH002','DISLIKE',N'Không ngon')
 
-GO
-
-----tạo role người dùng
---Exec sp_addrole 'DOITAC'
---Exec sp_addrole 'KHACHHANG'
---Exec sp_addrole 'TAIXE'
---Exec sp_addrole 'NHANVIEN'
---Exec sp_addrole 'QUANTRI'
-
-----PHÂN QUYỀN ĐỐI TÁC
---GRANT SELECT
---ON DOITAC
---TO DOITAC
-
---GRANT SELECT, UPDATE
---ON CUAHANG
---TO DOITAC
-
---GRANT INSERT, SELECT, UPDATE, DELETE
---ON THUCDON
---TO DOITAC
-
---GRANT INSERT, SELECT, UPDATE, DELETE
---ON MONAN
---TO DOITAC
-
---GRANT SELECT
---ON DONHANG
---TO DOITAC
-
---GRANT SELECT
---ON DONHANG(TINHTRANG)
---TO DOITAC
-
---GRANT SELECT 
---ON PHANHOI
---TO DOITAC
-
-----PHÂN QUYỀN QUẢN TRỊ
---ALTER ROLE [db_owner] ADD MEMBER QUANTRI
-
-----PHÂN QUYỀN KHÁCH HÀNG
---grant update, select
---on KHACHHANG
---to KHACHHANG
-
---grant select
---on DOITAC
---to KHACHHANG
-
---grant select
---on CUAHANG
---to KHACHHANG
-
---grant select
---on MONAN
---to KHACHHANG
-
---grant select
---on THUCDON 
---to KHACHHANG
-
---grant select
---on TUYCHONMON
---to KHACHHANG
-
---grant select
---on DONHANG
---to KHACHHANG
-
---grant update
---on DONHANG(TINHTRANG)
---to KHACHHANG
-
---grant select
---on CT_DONHANG
---to KHACHHANG
-
---    -- PHÂN QUYỀN NHÂN VIÊN
---Grant INSERT,SELECT
---on DOITAC
---to NHANVIEN
-
---Grant UPDATE
---on DOITAC(NGUOIDAIDIEN)
---to NHANVIEN
-
---Grant SELECT
---on HOPDONG
---to NHANVIEN
-
---Grant SELECT, UPDATE
---on HOPDONG(THOIGIANHIEULUC)
---to NHANVIEN
-
---Grant UPDATE
---on HOPDONG(MADT)
---to NHANVIEN
-
---    -- PHÂN QUYỀN TÀI XẾ
---Grant INSERT,SELECT,UPDATE
---on TAIXE
---to TAIXE
-
---Grant SELECT
---on DONHANG
---to TAIXE
-
---Grant UPDATE
---on DONHANG(TINHTRANG)
---to TAIXE

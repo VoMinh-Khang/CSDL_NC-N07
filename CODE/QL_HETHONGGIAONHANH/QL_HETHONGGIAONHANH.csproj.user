@@ -49,6 +49,39 @@
     <Compile Update="KHACHHANG\KHDangKyTT.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="NHANVIEN\DuyetHD_NV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="NHANVIEN\FormMain_NV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="NHANVIEN\ThemHD_NV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="NHANVIEN\ThongkeDH_NV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="NHANVIEN\ThongkeKH_NV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="NHANVIEN\ThongKeReport_NV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="NHANVIEN\XemHD_NV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="TAIXE\DSDonHang_TX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="TAIXE\FormMain_TX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="TAIXE\TXDangKyTT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="TAIXE\TXTheoDoiThuNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="Properties\Resources.resx">

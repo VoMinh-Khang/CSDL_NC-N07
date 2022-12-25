@@ -69,6 +69,18 @@ namespace QL_HETHONGGIAONHANH
                         s = @"Data Source=" + exactly_server_name + ";Initial Catalog=QL_HETHONGGIAONHANH;Persist Security Info=True;User ID=TK_DOITAC;Password=TK_DOITAC12345";
                         break;
                     }
+                //tài xế
+                case 2:
+                    {
+                        s = @"Data Source=" + exactly_server_name + ";Initial Catalog=QL_HETHONGGIAONHANH;Persist Security Info=True;User ID=TK_TAIXE;Password=TK_TAIXE12345";
+                        break;
+                    }
+                //// nhân viên
+                case 3:
+                    {
+                        s = @"Data Source=" + exactly_server_name + ";Initial Catalog = QL_HETHONGGIAONHANH;Persist Security Info=True;User ID=TK_NHANVIEN;Password=TK_NHANVIEN12345";
+                        break;
+                    }
                 // khách hàng
                 case 4:
                     {

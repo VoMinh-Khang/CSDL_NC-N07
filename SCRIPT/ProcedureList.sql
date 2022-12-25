@@ -30,7 +30,7 @@ BEGIN
 END 
 GO
 --SELECT * FROM DOITAC
---exec USP_DKDOITAC 'DT006','TK006','829','yzh44188@nezi8.com','American BluAs',N'Lê văn tanh',N'Hồ Na minh','',N'ăn vặt',N'100 tr?n hung d?o, hà n?i',093736656,5,8        
+----exec USP_DKDOITAC 'DT006','TK006','829','yzh44188@nezi8.com','American BluAs',N'Lê văn tanh',N'Hồ Na minh','',N'ăn vặt',N'100 tr?n hung d?o, hà n?i',093736656,5,8        
 
 --đăng kí để lập hợp đồng
 DROP PROC IF EXISTS USP_DT_DKHOPDONG
@@ -62,7 +62,7 @@ END
 GO
 --SELECT * FROM DOITAC
 --SELECT * FROM HOPDONG
---exec USP_DT_DKHOPDONG 'HD006','20220918','20230222','050776527354',150.000,'DT006',NULL,1
+----exec USP_DT_DKHOPDONG 'HD006','20220918','20230222','050776527354',150.000,'DT006',NULL,1
 --thêm cửa hàng
 DROP PROC IF EXISTS USP_THEMCUAHANG
 GO
@@ -87,7 +87,7 @@ BEGIN
 END
 GO
 --SELECT * FROM CUAHANG
---exec USP_THEMCUAHANG '009','DT001',N'mm',N'23 lê lợi, Quận 10','20220518 00:00:00',''
+----exec USP_THEMCUAHANG '009','DT001',N'mm',N'23 lê lợi, Quận 10','20220518 00:00:00',''
 --Cập nhật thông tin cửa hàng đã đăng kí
 DROP PROC IF EXISTS USP_CAPNHATCUAHANG
 GO
@@ -119,8 +119,8 @@ BEGIN
 	RETURN 1
 END
 GO
-SELECT * FROM CUAHANG
---exec USP_CAPNHATCUAHANG '001','DT001','Soul spectrum',N'18 lê lợi, Quận 9','20220518 00:00:00',''
+
+----exec USP_CAPNHATCUAHANG '001','DT001','Soul spectrum',N'18 lê lợi, Quận 9','20220518 00:00:00',''
 
 --Thêm món ăn
 DROP PROC IF EXISTS USP_THEMMONAN
@@ -142,7 +142,7 @@ BEGIN
 	RETURN 1
 END 
 GO
---exec USP_THEMMONAN N'Cánh gà','',30.000,N'Đã xử lý'
+----exec USP_THEMMONAN N'Cánh gà','',30.000,N'Đã xử lý'
 --SELECT * FROM MONAN
 --Xóa món ăn
 DROP PROC IF EXISTS USP_XOAMONAN
@@ -162,7 +162,7 @@ BEGIN
 	DELETE MONAN WHERE TENMON =@TENMON AND @MIEUTAMON=MIEUTAMON and GIA=@GIA and @TINHTRANGMONAN=TINHTRANGMONAN
 END
 GO 
---exec USP_XOAMONAN N'Cánh gà','',30.000,N'Đã xử lý'
+----exec USP_XOAMONAN N'Cánh gà','',30.000,N'Đã xử lý'
 --Cập nhật món ăn
 DROP PROC IF EXISTS USP_CAPNHATMONAN
 GO
@@ -187,8 +187,6 @@ BEGIN
 	return 1
 END 
 GO
-SELECT * FROM MONAN
-exec USP_CAPNHATMONAN N'Bún riêu','',10.000,N'Chưa xử lý'
 
 
 --Xem đơn hàng
@@ -220,11 +218,9 @@ BEGIN
 	RETURN 1
 END
 GO
-select * from MONAN
-select * from DONHANG
-exec USP_DOITACAPNHATDONHANG DH001
---select * from DONHANG
---EXEC USP_DOITACAPNHATDONHANG DH001, N'Đang giao'
+
+----exec USP_DOITACAPNHATDONHANG DH001, N'Đang giao'
+
 --Xem danh sách đơn hàng đã nhận
 DROP PROC IF EXISTS USP_DOITAXEMDONHANGDANHAN
 GO
@@ -234,7 +230,7 @@ BEGIN
 	SELECT * FROM DONHANG 
 	WHERE TINHTRANG =N'Đang chuẩn bị'
 END
---EXEC USP_DOITAXEMDONHANGDANHAN
+----exec USP_DOITAXEMDONHANGDANHAN
 --Xem đơn hàng theo ngày tháng năm
 GO
 DROP PROC IF EXISTS USP_DOITAC_XEMDSDONHANG
@@ -246,7 +242,7 @@ BEGIN
 	SELECT * FROM DONHANG WHERE NGAYLAP= @NGAYLAP AND TINHTRANG = N'Đã giao'
 END
 
-exec USP_DOITAC_XEMDSDONHANG '2021-06-18'
+--exec USP_DOITAC_XEMDSDONHANG '2021-06-18'
 -- Xem số lượng đơn theo ngày, tháng năm
 GO
 DROP PROC IF EXISTS USP_DOITAC_XEMSLDONHANG
@@ -257,7 +253,7 @@ AS
 BEGIN 
 	SELECT COUNT (MADON) AS 'Số lượng đơn hàng trong ngày' FROM DONHANG WHERE NGAYLAP=@NGAYLAP AND TINHTRANG = N'Đã giao'
 END
---exec USP_DOITAC_XEMSLDONHANG '2021-05-09 00:00:00.000'
+----exec USP_DOITAC_XEMSLDONHANG '2021-05-09 00:00:00.000'
 --theo dõi doanh thu theo ngày
 GO
 DROP PROC IF EXISTS USP_DOITAC_DOANHTHU_NGAY
@@ -277,7 +273,7 @@ BEGIN
 	SET @TONGDOANHTHU = (SELECT SUM (TONGTIEN) FROM DONHANG WHERE @NGAYLAP=NGAYLAP AND TINHTRANG = N'Đã giao' )
 	SELECT @TONGDOANHTHU
 END
---exec USP_DOITAC_DOANHTHU_NGAY '2022-04-07 00:00:00.000'
+----exec USP_DOITAC_DOANHTHU_NGAY '2022-04-07 00:00:00.000'
 --XEM DANH SÁCH ĐƠN HÀNG ĐÃ HỦY
 --DROP PROC IF EXISTS USP_DOITAXEMDONHANGDAHUY
 --GO
@@ -287,7 +283,8 @@ END
 --	SELECT * FROM DONHANG 
 --	WHERE TINHTRANG =N'Đã hủy'
 --END
-SELECT * FROM DONHANG
+
+
 --XEM PHẢN HỒI CỦA KHÁCH HÀNG
 GO
 DROP PROC IF EXISTS USP_XEMPHANHOI
@@ -299,7 +296,7 @@ BEGIN
 END
 
 --SELECT * FROM HOPDONG
---exec USP_DKHOPDONG 'HD006','20220918 00:00:00','20230222 00:00:00','050776527354',150.000,'DT006','811','241782293',1
+----exec USP_DKHOPDONG 'HD006','20220918 00:00:00','20230222 00:00:00','050776527354',150.000,'DT006','811','241782293',1
 
 GO
 DROP PROC IF EXISTS USP_DKHOPDONG
@@ -326,10 +323,6 @@ BEGIN
 	RETURN 1
 END
 GO
-
-
-
-
 
 
 
@@ -407,7 +400,7 @@ GO
 
 --				declare @tong varchar(10)
 --				declare @t int
---EXEC USP_LOGIN 'kh1','123456789',@tong,@t
+----exec USP_LOGIN 'kh1','123456789',@tong,@t
  
 
 --thêm tài khoản khách hàng
@@ -488,7 +481,7 @@ BEGIN
 	--WHERE TENMON LIKE @tenmon
 END
 
---exec USP_KH_TIMMONAN N'cHÁO gà'
+----exec USP_KH_TIMMONAN N'cHÁO gà'
 
 
 --Khách hàng xem danh sách đối tác
@@ -538,6 +531,7 @@ GO
 DROP PROC IF EXISTS USP_KH_DATHANG
 GO
 CREATE PROC USP_KH_DATHANG
+	@madt varchar(10),
 	@mach varchar(10),
 	@madon varchar(10),
 	@ngaymua datetime,
@@ -565,7 +559,7 @@ BEGIN
 			RETURN -1
 		END
 	DECLARE @IDKV VARCHAR(10)
-	SET @IDKV = (SELECT ID_KHUVUC FROM CUAHANG WHERE MACUAHANG=@mach)
+	SET @IDKV = (SELECT ID_KHUVUC FROM CUAHANG WHERE MACUAHANG=@mach AND MADT=@madt)
 	INSERT INTO DONHANG VALUES(@madon,@ngaymua,@hinhthuctt,@diachigiaohang,@phisp,@phivc,@tongtien,N'Chờ xác nhận',@ngaygiao,@makh,NULL,@IDKV)
 	RETURN 1
 END
@@ -696,3 +690,312 @@ BEGIN
 	RETURN 1
 END
 GO
+
+USE QL_HETHONGGIAONHANH
+GO
+
+--PHÂN HỆ NHÂN VIÊN
+--Nhân viên xem danh sách hợp đồng của đối tác
+GO
+DROP PROC IF EXISTS USP_NV_XEMDSHOPDONG
+GO
+CREATE PROC USP_NV_XEMDSHOPDONG @madt varchar(10)
+AS
+BEGIN
+	SELECT * FROM DOITAC dt JOIN HOPDONG hd ON hd.MADT = dt.MADT
+	WHERE dt.MADT = @madt
+END
+
+--Nhân viên xem thống kê lượng khách hàng của từng đối tác theo ngày
+GO
+DROP PROC IF EXISTS USP_NV_THONGKEKHACH_NGAY
+GO
+CREATE PROC USP_NV_THONGKEKHACH_NGAY @ngay datetime
+AS
+BEGIN
+	SELECT kh.* FROM KHACHHANG KH JOIN DONHANG DH ON dh.NGAYGIAO = @ngay AND dh.TINHTRANG = N'Đã giao' AND dh.MAKHACH = kh.MAKHACH
+END
+--exec USP_NV_THONGKEKHACH_NGAY '20210519'
+
+
+--Nhân viên xem thống kê lượng khách hàng của từng đối tác theo tháng
+GO
+DROP PROC IF EXISTS USP_NV_THONGKEKHACH_THANG
+GO
+CREATE PROC USP_NV_THONGKEKHACH_THANG @madt varchar(10), @thang int, @nam int
+AS
+BEGIN
+	SELECT kh.* FROM  KHACHHANG KH JOIN DONHANG DH ON MONTH(dh.NGAYGIAO) = @thang AND YEAR(dh.NGAYGIAO) = @nam AND dh.TINHTRANG = N'Đã giao' AND dh.MAKHACH = kh.MAKHACH
+	
+END
+--exec USP_NV_THONGKEKHACH_NGAY '20210519'
+
+--Nhân viên xem danh sách hợp đồng sắp hết hạn
+GO
+DROP PROC IF EXISTS USP_NV_XEMDSHOPDONG_HETHAN
+GO
+CREATE PROC USP_NV_XEMDSHOPDONG_HETHAN @mahd varchar(10), @hieuluc datetime
+AS
+BEGIN
+	SELECT * FROM HOPDONG hd WHERE DATEDIFF(DAY, hd.THOIGIANHIEULUC, hd.NGAYLAP) < 30
+END
+
+--Nhân viên thống kê lượng đơn hàng, doanh thu của từng đối tác
+GO
+DROP PROC IF EXISTS USP_NV_THONGKEDH
+GO
+CREATE PROC USP_NV_THONGKEDH @madt varchar(10)
+AS
+BEGIN
+		IF(NOT EXISTS (SELECT * FROM DOITAC WHERE MADT = @madt))
+	BEGIN
+		PRINT N'Không tồn tại đối tác nào có mã như trên'
+		return
+	END
+
+	SELECT DH.* FROM DONHANG DH JOIN CT_DONHANG CT_DH ON CT_DH.MADON = DH.MADON AND CT_DH.MADT = @madt
+
+END
+--exec USP_NV_THONGKEDH 'DT002'
+SELECT * FROM CT_DONHANG 
+-- chỖ NÀY T HONG BIẾT SAO ĐỂ TRUY XUẤT ĐẾN ĐUUNGS ĐỐI TÁC                            
+GO
+DROP PROC IF EXISTS USP_NV_THONGKEDOANHTHU
+GO
+CREATE PROC USP_NV_THONGKEDOANHTHU @madt varchar(10)
+AS
+BEGIN
+	IF(NOT EXISTS (SELECT * FROM DOITAC WHERE MADT = @madt))
+	BEGIN
+		PRINT N'Không tồn tại đối tác nào có mã như trên'
+		return
+	END
+
+	SELECT SUM(DH.PHISP) + SUM(DH.PHIVC) AS DOANHTHU FROM DONHANG DH JOIN CT_DONHANG CT_DH ON DH.MADON=CT_DH.MADON
+	WHERE TINHTRANG=N'Đã giao' AND CT_DH.MADT=@madt
+END
+--exec SP_NV_THONGKEDOANHTHU 'DT004'
+--Nhân viên thống kê số lượng đơn hàng, hoa hồng từ các đơn hàng của từng đối tác
+--GO
+--DROP PROC IF EXISTS USP_NV_THONGKEHOAHONG
+--GO
+--CREATE PROC USP_NV_THONGKEHOAHONG @madt varchar(10), @mahd varchar(10), @thang int, @nam int
+--AS
+--BEGIN
+--	IF(NOT EXISTS (SELECT * FROM DOITAC WHERE MADT = @madt))
+--	BEGIN
+--		PRINT N'Không tồn tại đối tác nào có mã như trên'
+--		return
+--	END
+
+--	DECLARE @total INT, @tonghoahong FLOAT
+--	SET @total = (SELECT COUNT(dh.MADON) FROM DONHANG dh)
+--	SET @tonghoahong = (SELECT SUM(hd.PHIHOAHONG) FROM HOPDONG hd WHERE MADT = @madt AND YEAR(hd.NGAYLAP) AND MONTH(hd.NGAYLAP))
+--	RETURN @tonghoahong
+--END
+
+
+--Nhân viên xem danh sách hợp đồng đã lập của đối tác
+GO
+DROP PROC IF EXISTS USP_NV_XEMDSHOPDONG_DUYET
+GO
+CREATE PROC USP_NV_XEMDSHOPDONG_DUYET @madt varchar(10)
+AS
+BEGIN
+	SELECT * FROM DOITAC dt JOIN HOPDONG hd ON hd.MADT = dt.MADT
+	WHERE dt.MADT = @madt AND hd.TINHTRANGDUYET = N'Đã duyệt'
+END
+
+--Nhân viên duyệt hợp đồng
+GO
+DROP PROC IF EXISTS USP_NV_DUYETHOPDONG
+GO
+CREATE PROC USP_NV_DUYETHOPDONG @mahd varchar(10),
+								@ngaylap datetime,
+								@thoigianhieuluc datetime,
+								@taikhoanNH varchar(20),
+								@phihoahong float,
+								@madt varchar(10),
+								@masothue varchar(10),
+								@manv varchar(10),
+								@tinhtrangduyet int
+AS
+BEGIN
+	IF NOT EXISTS (SELECT * FROM HOPDONG WHERE @mahd = MASOHOPDONG AND @madt = MADT)
+	BEGIN
+		PRINT N'dữ liệu không tồn tại'
+	END
+	UPDATE HOPDONG 
+	SET TINHTRANGDUYET = @tinhtrangduyet
+	WHERE MASOHOPDONG = @mahd
+END
+
+--1. Tài xế đăng ký thông tin (Tạo tài khoản)
+GO
+DROP PROC IF EXISTS UPS_TX_TAOTK
+GO
+CREATE PROC UPS_TX_TAOTK
+	@CMND varchar(12),
+	@TAIKHOAN char(5),
+	@HOTEN nvarchar(30),
+	@DIENTHOAI char(10),
+	@DIACHI nvarchar(30),
+	@EMAIL varchar(20),
+	@BIENSOXE varchar(5),
+	@TAIKHOANNGANHANG char(15),
+	@PHITHUECHAN float,
+	@ID_KHUVUC char(10),
+	@USERNAME VARCHAR(20),
+	@pass VARCHAR(20),
+	@LOAITK int
+AS
+BEGIN
+	--Kiểm tra Mã TX đã tồn tại chưa
+	IF EXISTS (SELECT CMND FROM TAIXE WHERE CMND = @CMND)
+	BEGIN
+		PRINT(N'MÃ TÀI XẾ ĐÃ TỒN TẠI')
+		RETURN
+	END
+
+	--KIỂM TRA TÀI KHOẢN
+	IF EXISTS (SELECT ID FROM TAIKHOAN WHERE ID = @TAIKHOAN)
+	BEGIN
+		PRINT(N'ID ĐÃ TỒN TẠI')
+		RETURN
+	END
+
+	--XỬ LÍ THÊM VÀO BẢNG TAIKHOAN
+	INSERT INTO TAIKHOAN VALUES (@TAIKHOAN, @USERNAME, @pass, @LOAITK)
+
+	--XỬ LÍ THÊM VÀO BẢNG TAIXE
+	INSERT INTO TAIXE VALUES (@CMND, @TAIKHOAN, @HOTEN, @DIENTHOAI, @DIACHI, @EMAIL, @BIENSOXE, @TAIKHOANNGANHANG, @PHITHUECHAN, @ID_KHUVUC)
+
+END
+GO
+use QL_HETHONGGIAONHANH
+----------
+GO
+DROP PROC IF EXISTS UPS_TX_TAOTK
+GO
+CREATE PROC UPS_TX_TAOTK
+	@CMND varchar(12),
+	@HOTEN nvarchar(30),
+	@DIENTHOAI char(10),
+	@DIACHI nvarchar(30),
+	@EMAIL varchar(20),
+	@BIENSOXE varchar(5),
+	@TAIKHOANNGANHANG char(15),
+	@PHITHUECHAN float,
+	@ID_KHUVUC char(10),
+	@ID char(5),
+	@USERNAME VARCHAR(20),
+	@pass VARCHAR(20),
+	@LOAITK int
+AS
+BEGIN
+	--Kiểm tra Mã TX đã tồn tại chưa
+	IF EXISTS (SELECT CMND FROM TAIXE WHERE CMND = @CMND)
+	BEGIN
+		PRINT(N'MÃ TÀI XẾ ĐÃ TỒN TẠI')
+		ROLLBACK
+		RETURN 0
+	END
+
+	--KIỂM TRA TÀI KHOẢN
+	IF EXISTS (SELECT ID FROM TAIKHOAN WHERE ID = @ID)
+	BEGIN
+		PRINT(N'ID ĐÃ TỒN TẠI')
+		ROLLBACK
+		RETURN -1
+	END
+
+	--XỬ LÍ THÊM VÀO BẢNG TAIKHOAN
+	INSERT INTO TAIKHOAN VALUES (@ID, @USERNAME, @pass, @LOAITK)
+
+	--XỬ LÍ THÊM VÀO BẢNG TAIXE
+	INSERT INTO TAIXE VALUES (@CMND, @ID, @HOTEN, @DIENTHOAI, @DIACHI, @EMAIL, @BIENSOXE, @TAIKHOANNGANHANG, @PHITHUECHAN, @ID_KHUVUC)
+	
+	RETURN 1
+END
+GO
+
+--2. Tài xế xem danh sách đơn hàng trong khu vực 
+GO
+DROP PROC IF EXISTS USP_TX_XEMDSDONHANG
+GO
+CREATE PROC USP_TX_XEMDSDONHANG
+	@taikhoan varchar(12)
+AS
+BEGIN
+	DECLARE @ID_KHUVUC_TX char(10)
+	SELECT @ID_KHUVUC_TX = (SELECT ID_KHUVUC FROM TAIXE WHERE TAIXE.TAIKHOAN = @taikhoan)
+
+	SELECT * FROM DONHANG WHERE DONHANG.ID_KHUVUC = @ID_KHUVUC_TX AND DONHANG.TINHTRANG != N'Đã giao' AND DONHANG.TINHTRANG != N'ĐANG GIAO'
+END
+GO
+
+
+
+
+--exec USP_TX_XEMDSDONHANG 'TK007'
+
+--3. Tài xế chọn đơn hàng, cập nhật tình trạng đơn hàng
+GO
+DROP PROC IF EXISTS USP_TX_NHANDONHANG
+GO
+CREATE PROC USP_TX_NHANDONHANG
+	@MADON varchar(10),
+	@CMND_TX varchar(12)
+AS
+BEGIN
+	IF NOT EXISTS (SELECT * FROM DONHANG WHERE MADON = @MADON)
+	BEGIN
+		PRINT @MADON + N' không tồn tại'
+		RETURN
+	END
+
+	IF((SELECT TINHTRANG FROM DONHANG DH, TAIXE TX WHERE MADON = @MADON AND DH.ID_KHUVUC = TX.ID_KHUVUC) != N'Đang chuẩn bị')
+	BEGIN
+		PRINT @MADON + N' chưa được xác nhận hoặc đã được nhận bởi tài xế khác'
+		RETURN
+	END
+
+
+	UPDATE DONHANG SET TINHTRANG = N'Đang giao' WHERE MADON = @MADON AND TAIXE = @CMND_TX
+	PRINT N'Tài xế nhận đơn ' + @MADON + N' thành công'
+END
+
+
+
+--4. Tài xế theo dõi thu nhập
+GO
+DROP PROC IF EXISTS USP_TX_THEODOITHUNHAP
+GO
+CREATE PROC USP_TX_THEODOITHUNHAP
+	@taikhoan char(5)
+AS
+BEGIN
+	
+	----KIỂM TRA MÃ TÀI XẾ CÓ TỒN TẠI KHÔNG
+	--IF NOT EXISTS (SELECT CMND FROM TAIXE WHERE CMND = @CMND_TX)
+	--BEGIN
+	--	PRINT (N'MÃ TÀI XẾ KHÔNG TỒN TẠI')
+	--	RETURN
+	--END
+
+	DECLARE @CMND_TX varchar(12)
+	SELECT @CMND_TX = (SELECT CMND FROM TAIXE WHERE TAIXE.TAIKHOAN = @taikhoan)
+
+	--KIỂM TRA TÀI XẾ ĐÃ GIAO ĐƠN NÀO THÀNH CÔNG CHƯA
+	IF((SELECT COUNT(PHIVC) FROM DONHANG WHERE TAIXE = @CMND_TX AND TINHTRANG = N'ĐÃ GIAO') = 0)
+	BEGIN
+		PRINT(N'TÀI XẾ CHƯA CÓ THU NHẬP')
+		RETURN
+	END
+
+	SELECT TAIXE, PHIVC , NGAYGIAO FROM DONHANG WHERE TAIXE = @CMND_TX and TINHTRANG = N'ĐÃ GIAO'
+
+END
+--select * from TAIKHOAN
+--select taikhoan from TAIXE
+--exec USP_TX_THEODOITHUNHAP 'TK006'

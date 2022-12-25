@@ -74,7 +74,7 @@ namespace QL_HETHONGGIAONHANH
 
         private void QUANLYCUAHANG_Load(object sender, EventArgs e)
         {
-            //Functions.Connect(Functions.get_ConnectString());
+            //
             string sql = "Select *" + " FROM CUAHANG";
             tbl_CUAHANG = Functions.GetDataToTable(sql);
             dataGridViewQLCH.DataSource = tbl_CUAHANG;

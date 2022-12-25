@@ -28,7 +28,7 @@ namespace QL_HETHONGGIAONHANH
 
         private void QUANLYSOLIEU_Load(object sender, EventArgs e)
         {
-            //Functions.Connect(Functions.get_ConnectString());
+            //
 
 
 

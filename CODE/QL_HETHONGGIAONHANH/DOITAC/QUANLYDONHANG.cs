@@ -21,7 +21,7 @@ namespace QL_HETHONGGIAONHANH
 
         private void QUANLYDONHANG_Load(object sender, EventArgs e)
         {
-            //Functions.Connect(Functions.get_ConnectString());
+            //
             string sql = "Select * " + " FROM DONHANG" ;
             tbl_DONHANG = Functions.GetDataToTable(sql);
             dataGridViewCNTTDH.DataSource = tbl_DONHANG;
