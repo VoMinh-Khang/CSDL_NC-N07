@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZKvY3JrfsxZUUPi73t8sYS+IeLz06AObkLnRMmAfY79AzezCYatgKvCkVs7HWhwbaaOVozCfTjncXXih9ioGfw==",
+  "dgSpecHash": "xBTkw/0iiTTb4myKBPNQaHiCvkBveUC0gLSuKWyyzxBNxKR5ZIvgRUn2fWnBPZsWZonwCKaozklK84urMPz9Iw==",
   "success": true,
-  "projectFilePath": "D:\\winform\\QL_HETHONGGIAONHANH\\QL_HETHONGGIAONHANH\\QL_HETHONGGIAONHANH.csproj",
+  "projectFilePath": "D:\\winform\\QL_HETHONGGIAONHANH\\CSDL_NC-N07\\CODE\\QL_HETHONGGIAONHANH\\QL_HETHONGGIAONHANH.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\trang\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\trang\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\winform\\QL_HETHONGGIAONHANH\\QL_HETHONGGIAONHANH\\QL_HETHONGGIAONHANH.csproj": {}
+    "D:\\winform\\QL_HETHONGGIAONHANH\\CSDL_NC-N07\\CODE\\QL_HETHONGGIAONHANH\\QL_HETHONGGIAONHANH.csproj": {}
   },
   "projects": {
-    "D:\\winform\\QL_HETHONGGIAONHANH\\QL_HETHONGGIAONHANH\\QL_HETHONGGIAONHANH.csproj": {
+    "D:\\winform\\QL_HETHONGGIAONHANH\\CSDL_NC-N07\\CODE\\QL_HETHONGGIAONHANH\\QL_HETHONGGIAONHANH.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\winform\\QL_HETHONGGIAONHANH\\QL_HETHONGGIAONHANH\\QL_HETHONGGIAONHANH.csproj",
+        "projectUniqueName": "D:\\winform\\QL_HETHONGGIAONHANH\\CSDL_NC-N07\\CODE\\QL_HETHONGGIAONHANH\\QL_HETHONGGIAONHANH.csproj",
         "projectName": "QL_HETHONGGIAONHANH",
-        "projectPath": "D:\\winform\\QL_HETHONGGIAONHANH\\QL_HETHONGGIAONHANH\\QL_HETHONGGIAONHANH.csproj",
+        "projectPath": "D:\\winform\\QL_HETHONGGIAONHANH\\CSDL_NC-N07\\CODE\\QL_HETHONGGIAONHANH\\QL_HETHONGGIAONHANH.csproj",
         "packagesPath": "C:\\Users\\trang\\.nuget\\packages\\",
-        "outputPath": "D:\\winform\\QL_HETHONGGIAONHANH\\QL_HETHONGGIAONHANH\\obj\\",
+        "outputPath": "D:\\winform\\QL_HETHONGGIAONHANH\\CSDL_NC-N07\\CODE\\QL_HETHONGGIAONHANH\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
