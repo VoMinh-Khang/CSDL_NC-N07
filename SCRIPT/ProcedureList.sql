@@ -534,7 +534,7 @@ CREATE PROC USP_KH_DATHANG
 	@mach varchar(10),
 	@madon varchar(10),
 	@ngaymua datetime,
-	@ngaygiao datetime,
+	--@ngaygiao datetime,
 	@makh varchar(10),
 	@hinhthuctt nvarchar(50),
 	@diachigiaohang nvarchar(300),
@@ -559,7 +559,7 @@ BEGIN
 		END
 	DECLARE @IDKV VARCHAR(10)
 	SET @IDKV = (SELECT ID_KHUVUC FROM CUAHANG WHERE MACUAHANG=@mach AND MADT=@madt)
-	INSERT INTO DONHANG VALUES(@madon,@ngaymua,@hinhthuctt,@diachigiaohang,@phisp,@phivc,@tongtien,N'Chờ xác nhận',@ngaygiao,@makh,NULL,@IDKV)
+	INSERT INTO DONHANG VALUES(@madon,@ngaymua,@hinhthuctt,@diachigiaohang,@phisp,@phivc,@tongtien,N'Chờ xác nhận',NULL,@makh,NULL,@IDKV)
 	RETURN 1
 END
 GO
@@ -690,6 +690,38 @@ BEGIN
 END
 GO
 
+
+--khách hàng đánh giá món ăn
+--select * from PHANHOI
+GO
+DROP PROC IF EXISTS USP_KH_DANHGIAMON
+GO
+CREATE PROC USP_KH_DANHGIAMON
+	@tenmon nvarchar(80),
+	@makhach varchar(10),
+	@danhgia char(7),
+	@binhluan nvarchar(100)
+AS
+BEGIN
+	IF NOT EXISTS (SELECT TENMON FROM MONAN WHERE TENMON = @tenmon)
+	BEGIN
+		PRINT @tenmon + N' Không tồn tại'
+		RETURN -1
+	END
+	IF NOT EXISTS (SELECT MAKHACH FROM KHACHHANG WHERE MAKHACH = @makhach)
+	BEGIN
+		PRINT @makhach + N' Không tồn tại'
+		RETURN 0
+	END
+	INSERT INTO PHANHOI
+	VALUES (@tenmon,@makhach,@danhgia,@binhluan)
+	RETURN 1
+END
+
+--EXEC USP_KH_DANHGIAMON N'Cháo gà','KH001','LIKE',N'ddam'
+
+
+GO
 USE QL_HETHONGGIAONHANH
 GO
 

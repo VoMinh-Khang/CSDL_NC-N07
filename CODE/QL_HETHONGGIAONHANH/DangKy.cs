@@ -50,6 +50,10 @@ namespace QL_HETHONGGIAONHANH
         {
             Application.Run(new DANGKYDOITAC(username, password, LOAITAIKHOAN));
         }
+        public void open_FormDKTX(object obj)
+        {
+            Application.Run(new TXDangKyTT(username, password, LOAITAIKHOAN));
+        }
         private void btn_quaylai_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -117,9 +121,6 @@ namespace QL_HETHONGGIAONHANH
                 return;
             }
 
-            //thiếu: usp_taotaikhoan
-
-
             this.Close();
 
             // mở form nhập thông tin cá nhân
@@ -132,8 +133,11 @@ namespace QL_HETHONGGIAONHANH
             }
             else if (checkBox_TaiXe.Checked == true)
             {
-                //t = new Thread(open_FormDangKyDoiTac);
-                
+                checkBox_KhachHang.Checked = false;
+                checkBox_doitac.Checked = false;
+                LOAITAIKHOAN = "2";
+                t = new Thread(open_FormDKTX);
+
             }
             else if(checkBox_doitac.Checked == true)
             {

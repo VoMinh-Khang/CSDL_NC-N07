@@ -141,6 +141,9 @@ namespace QL_HETHONGGIAONHANH
             ActivateButton(sender);
         }
 
-       
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

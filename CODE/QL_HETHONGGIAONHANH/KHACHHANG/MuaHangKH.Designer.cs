@@ -61,6 +61,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.textBox_MaDT = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dsMonAn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsDoiTac)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCuaHang)).BeginInit();
@@ -152,7 +153,7 @@
             this.btn_MuaNgay.Location = new System.Drawing.Point(995, 743);
             this.btn_MuaNgay.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btn_MuaNgay.Name = "btn_MuaNgay";
-            this.btn_MuaNgay.Size = new System.Drawing.Size(114, 61);
+            this.btn_MuaNgay.Size = new System.Drawing.Size(126, 61);
             this.btn_MuaNgay.TabIndex = 6;
             this.btn_MuaNgay.Text = "Mua Ngay";
             this.btn_MuaNgay.UseVisualStyleBackColor = true;
@@ -161,12 +162,12 @@
             // btn_ThemVaoGio
             // 
             this.btn_ThemVaoGio.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_ThemVaoGio.Location = new System.Drawing.Point(1119, 743);
+            this.btn_ThemVaoGio.Location = new System.Drawing.Point(1137, 743);
             this.btn_ThemVaoGio.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btn_ThemVaoGio.Name = "btn_ThemVaoGio";
-            this.btn_ThemVaoGio.Size = new System.Drawing.Size(145, 61);
+            this.btn_ThemVaoGio.Size = new System.Drawing.Size(127, 61);
             this.btn_ThemVaoGio.TabIndex = 7;
-            this.btn_ThemVaoGio.Text = "Thêm Vào Giỏ";
+            this.btn_ThemVaoGio.Text = "Thêm Giỏ";
             this.btn_ThemVaoGio.UseVisualStyleBackColor = true;
             this.btn_ThemVaoGio.Click += new System.EventHandler(this.btn_ThemVaoGio_Click);
             // 
@@ -291,10 +292,10 @@
             // 
             this.button_quaylai.BackColor = System.Drawing.Color.RosyBrown;
             this.button_quaylai.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button_quaylai.Location = new System.Drawing.Point(1054, 823);
+            this.button_quaylai.Location = new System.Drawing.Point(1056, 860);
             this.button_quaylai.Margin = new System.Windows.Forms.Padding(4);
             this.button_quaylai.Name = "button_quaylai";
-            this.button_quaylai.Size = new System.Drawing.Size(137, 108);
+            this.button_quaylai.Size = new System.Drawing.Size(164, 80);
             this.button_quaylai.TabIndex = 20;
             this.button_quaylai.Text = "QUAY LẠI";
             this.button_quaylai.UseVisualStyleBackColor = false;
@@ -416,11 +417,24 @@
             this.label12.TabIndex = 28;
             this.label12.Text = "Mã đối tác";
             // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox1.ForeColor = System.Drawing.Color.SeaGreen;
+            this.textBox1.Location = new System.Drawing.Point(1137, 814);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(129, 24);
+            this.textBox1.TabIndex = 32;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // MuaHangKH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1278, 944);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.textBox_MaCH);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.textBox_MaDT);
@@ -497,5 +511,6 @@
         private Label label11;
         private TextBox textBox_MaDT;
         private Label label12;
+        private TextBox textBox1;
     }
 }

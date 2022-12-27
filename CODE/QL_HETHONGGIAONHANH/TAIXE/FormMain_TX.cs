@@ -1,4 +1,4 @@
-﻿using QL_HETHONGGIAONHANH.TAIXE;
+﻿using QL_HETHONGGIAONHANH;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

@@ -238,7 +238,7 @@ namespace QL_HETHONGGIAONHANH
         }
         private void btn_ThemVaoGio_Click(object sender, EventArgs e)
         {
-           
+            textBox1.Text = "Đã thêm giỏ!";
         }
 
         private void btn_XemDSDT_Click(object sender, EventArgs e)

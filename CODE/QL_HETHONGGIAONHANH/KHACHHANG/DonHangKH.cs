@@ -18,7 +18,6 @@ namespace QL_HETHONGGIAONHANH
         string tenmon;
         string gia;
         string ngaymua;
-        string ngaygiao;
         string luongmua;
         string phivc;
         string phisp;
@@ -131,8 +130,8 @@ namespace QL_HETHONGGIAONHANH
             gia = txtBox_GiaMon.Text.Trim();
             DateTime todayNow = DateTime.Now;
             ngaymua = todayNow.ToString();
-            DateTime giaohnay = DateTime.Today;
-            ngaygiao = giaohnay.ToString();
+            //DateTime giaohnay = DateTime.Today;
+            //ngaygiao = giaohnay.ToString();
             hinhthuctt = comboBox1.Text.Trim();
             tongcong = textBox_TongTien.Text.Trim();
             diachigiao = textBox_DCG.Text.Trim();
@@ -199,7 +198,6 @@ namespace QL_HETHONGGIAONHANH
             cmd.Parameters.Add("@madon", SqlDbType.VarChar, 10);
             cmd.Parameters.Add("@makh", SqlDbType.VarChar, 10);
             cmd.Parameters.Add("@ngaymua", SqlDbType.DateTime);
-            cmd.Parameters.Add("@ngaygiao", SqlDbType.DateTime);
             cmd.Parameters.Add("@hinhthuctt", SqlDbType.NVarChar,50);
             cmd.Parameters.Add("@diachigiaohang", SqlDbType.NVarChar, 300);
             cmd.Parameters.Add("@tongtien", SqlDbType.Float, 19);
@@ -217,7 +215,6 @@ namespace QL_HETHONGGIAONHANH
             cmd.Parameters["@madon"].Value = madon;
             cmd.Parameters["@makh"].Value = MAKHACH;
             cmd.Parameters["@ngaymua"].Value = ngaymua;
-            cmd.Parameters["@ngaygiao"].Value = ngaygiao;
             cmd.Parameters["@hinhthuctt"].Value = hinhthuctt;
             cmd.Parameters["@diachigiaohang"].Value = diachigiao;
             cmd.Parameters["@tongtien"].Value = tongcong;

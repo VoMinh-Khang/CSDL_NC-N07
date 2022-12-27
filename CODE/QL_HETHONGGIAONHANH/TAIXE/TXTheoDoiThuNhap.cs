@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QL_HETHONGGIAONHANH.TAIXE
+namespace QL_HETHONGGIAONHANH
 {
     public partial class TXTheoDoiThuNhap : Form
     {

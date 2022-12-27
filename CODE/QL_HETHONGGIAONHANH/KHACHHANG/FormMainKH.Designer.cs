@@ -136,6 +136,7 @@
             this.textBox2.Size = new System.Drawing.Size(166, 85);
             this.textBox2.TabIndex = 0;
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // btnLichSuMuaHang
             // 

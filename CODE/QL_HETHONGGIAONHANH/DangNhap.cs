@@ -26,7 +26,7 @@ namespace QL_HETHONGGIAONHANH
 
         private void resetvalue_DN()
         {
-            txtUsername.Text = "nv1";
+            txtUsername.Text = "kh1";
             txtPassword.Text = "123456789";
         }
 

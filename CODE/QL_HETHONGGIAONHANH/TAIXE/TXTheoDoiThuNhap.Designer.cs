@@ -1,4 +1,4 @@
-﻿namespace QL_HETHONGGIAONHANH.TAIXE
+﻿namespace QL_HETHONGGIAONHANH
 {
     partial class TXTheoDoiThuNhap
     {
