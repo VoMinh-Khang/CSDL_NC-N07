@@ -75,7 +75,7 @@ insert TUYCHONMON values(N'Cơm chiên','3')
 
 --THUCDON
 
-insert dbo.THUCDON VALUES('001','DT001',N'Cơm gà',10)
+insert dbo.THUCDON VALUES('001','DT001',N'Cơm gà',33)
 
 insert dbo.THUCDON VALUES('001','DT001',N'Cháo gà',100)
 

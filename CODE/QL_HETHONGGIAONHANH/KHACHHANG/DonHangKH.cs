@@ -140,32 +140,12 @@ namespace QL_HETHONGGIAONHANH
             phivc = textBox_PhiVC.Text.Trim();
             thanhtien = (float.Parse(txtBox_GiaMon.Text.ToString()) * Int32.Parse(textBox_LuongMua.Text.Trim().ToString())).ToString();
 
-
-            //SqlCommand cmd = new SqlCommand("TaoMaDon", Functions.Con);
-            //cmd.CommandType = System.Data.CommandType.StoredProcedure;
-
-            //cmd.Parameters.Add("@madon", SqlDbType.VarChar, 10).Direction = ParameterDirection.Output;;
-
-            //// set giá trị
-            //cmd.Parameters["@madon"].Value = madon;
-
-            //cmd.ExecuteNonQuery();
-
-            //madon = Convert.ToString(cmd.Parameters["@madon"].Value);
-
             string missing = "000000000";
             string sql = "SELECT COUNT(*) FROM DONHANG";
             int rows_number = Int32.Parse(Functions.GetFieldValues(sql));
             rows_number++;
-            //MAKHACH = "KH" + missing.Substring(0, 10 - 2 - rows_number.ToString().Length) + rows_number.ToString();//Thiếu
             madon = "DH" + missing.Substring(0, 5 - 2 - rows_number.ToString().Length) + rows_number.ToString();
 
-            //string sql = "select top 1 MADON from DONHANG order by NGAYLAP desc";
-            //string get_madon = Functions.GetFieldValues(sql);
-            //int madonmoi = Int32.Parse(get_madon.Substring(2));
-            //madonmoi++;
-
-            //madon = "DH" + missing.Substring(0, 5 - 2 - madonmoi.ToString().Length) + madonmoi.ToString();
 
             try
             {

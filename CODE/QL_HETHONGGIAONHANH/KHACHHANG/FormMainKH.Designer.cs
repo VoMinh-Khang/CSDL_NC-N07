@@ -33,7 +33,6 @@
             this.btn_dangxuat_KH = new System.Windows.Forms.Button();
             this.btn_thoat_KH = new System.Windows.Forms.Button();
             this.btn_muahang_KH = new System.Windows.Forms.Button();
-            this.btn_giohang_KH = new System.Windows.Forms.Button();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.btnLichSuMuaHang = new System.Windows.Forms.Button();
@@ -65,7 +64,7 @@
             // btn_dangxuat_KH
             // 
             this.btn_dangxuat_KH.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_dangxuat_KH.Location = new System.Drawing.Point(16, 497);
+            this.btn_dangxuat_KH.Location = new System.Drawing.Point(16, 482);
             this.btn_dangxuat_KH.Name = "btn_dangxuat_KH";
             this.btn_dangxuat_KH.Size = new System.Drawing.Size(153, 60);
             this.btn_dangxuat_KH.TabIndex = 2;
@@ -87,7 +86,7 @@
             // btn_muahang_KH
             // 
             this.btn_muahang_KH.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_muahang_KH.Location = new System.Drawing.Point(16, 213);
+            this.btn_muahang_KH.Location = new System.Drawing.Point(20, 243);
             this.btn_muahang_KH.Name = "btn_muahang_KH";
             this.btn_muahang_KH.Size = new System.Drawing.Size(150, 66);
             this.btn_muahang_KH.TabIndex = 4;
@@ -95,24 +94,12 @@
             this.btn_muahang_KH.UseVisualStyleBackColor = true;
             this.btn_muahang_KH.Click += new System.EventHandler(this.btn_muahang_KH_Click);
             // 
-            // btn_giohang_KH
-            // 
-            this.btn_giohang_KH.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_giohang_KH.Location = new System.Drawing.Point(16, 294);
-            this.btn_giohang_KH.Name = "btn_giohang_KH";
-            this.btn_giohang_KH.Size = new System.Drawing.Size(149, 72);
-            this.btn_giohang_KH.TabIndex = 5;
-            this.btn_giohang_KH.Text = "Giỏ hàng";
-            this.btn_giohang_KH.UseVisualStyleBackColor = true;
-            this.btn_giohang_KH.Click += new System.EventHandler(this.btn_giohang_KH_Click);
-            // 
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.panelMenu.Controls.Add(this.textBox2);
             this.panelMenu.Controls.Add(this.label1);
             this.panelMenu.Controls.Add(this.btnLichSuMuaHang);
-            this.panelMenu.Controls.Add(this.btn_giohang_KH);
             this.panelMenu.Controls.Add(this.btn_muahang_KH);
             this.panelMenu.Controls.Add(this.btn_thoat_KH);
             this.panelMenu.Controls.Add(this.btn_dangxuat_KH);
@@ -141,7 +128,7 @@
             // btnLichSuMuaHang
             // 
             this.btnLichSuMuaHang.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnLichSuMuaHang.Location = new System.Drawing.Point(16, 384);
+            this.btnLichSuMuaHang.Location = new System.Drawing.Point(20, 345);
             this.btnLichSuMuaHang.Name = "btnLichSuMuaHang";
             this.btnLichSuMuaHang.Size = new System.Drawing.Size(150, 93);
             this.btnLichSuMuaHang.TabIndex = 6;
@@ -178,7 +165,6 @@
         private Button btn_dangxuat_KH;
         private Button btn_thoat_KH;
         private Button btn_muahang_KH;
-        private Button btn_giohang_KH;
         private Panel panelMenu;
         private Button btnLichSuMuaHang;
         private Panel panelChildForm_KH;

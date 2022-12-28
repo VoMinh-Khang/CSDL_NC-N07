@@ -129,7 +129,7 @@ namespace QL_HETHONGGIAONHANH
 
         private void btn_giohang_KH_Click(object sender, EventArgs e)
         {
-            openChildForm(new GioHangKH());
+            //openChildForm(new GioHangKH());
             ActivateButton(sender);
         }
 

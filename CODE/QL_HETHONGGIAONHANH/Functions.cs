@@ -7,9 +7,7 @@ namespace QL_HETHONGGIAONHANH
 {
     class Functions
     {
-        // tên server của SQL server
-       // private static string exactly_server_name = @"DESKTOP-0QKBNDR";     
-      //  private static string exactly_server_name = @"LTBM-PC";
+    
         private static string exactly_server_name = @"192.168.32.131";
 
         //Khai báo đối tượng kết nối  
