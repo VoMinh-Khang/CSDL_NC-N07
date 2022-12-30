@@ -60,6 +60,25 @@ namespace QL_HETHONGGIAONHANH
 
         internal void AddNewChoice(string madt, string mach, string tenmon, string gia, int soluong)
         {
+            //for (int i = 0; i < dataGridView1.Rows.Count; ++i)
+            //{
+            //    if (Convert.ToString(dataGridView1.Rows[i].Cells[2].Value) == tenmon)
+            //    {
+            //        dataGridView1.Rows[i].Cells[4].Value = Convert.ToInt32(dataGridView1.Rows[i].Cells[4].Value) + 1;
+            //    }
+            //    else
+            //    {
+            //        DataGridViewRow newRow = new DataGridViewRow();
+            //        newRow.CreateCells(dataGridView1);
+            //        newRow.Cells[0].Value = madt;
+            //        newRow.Cells[1].Value = mach;
+            //        newRow.Cells[2].Value = tenmon;
+            //        newRow.Cells[3].Value = gia;
+            //        newRow.Cells[4].Value = soluong;
+            //        dataGridView1.Rows.Add(newRow);
+            //    }
+
+            //}
 
             DataGridViewRow newRow = new DataGridViewRow();
             newRow.CreateCells(dataGridView1);
@@ -69,14 +88,19 @@ namespace QL_HETHONGGIAONHANH
             newRow.Cells[3].Value = gia;
             newRow.Cells[4].Value = soluong;
             dataGridView1.Rows.Add(newRow);
+            
             TinhTong();
 
-            //sum += Convert.ToDouble(newRow.Cells[3].Value.ToString()) * Convert.ToInt32(newRow.Cells[4].Value);
-            //textBox_PhiSP.Text = (sum * 0.1).ToString();
-            //tongcong = phivc + sum + sum * 0.1;
-            //textBox_TongTien.Text = tongcong.ToString();
-
         }
+        private void DataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            TinhTong();
+        }
+        private void DataGridView1_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            TinhTong();
+        }
+
         private void TinhTong()
         {
             sum = 0;
@@ -216,5 +240,9 @@ namespace QL_HETHONGGIAONHANH
 
         }
 
+        private void GioHangKH_Load(object sender, EventArgs e)
+        {
+            TinhTong();
+        }
     }      
 }

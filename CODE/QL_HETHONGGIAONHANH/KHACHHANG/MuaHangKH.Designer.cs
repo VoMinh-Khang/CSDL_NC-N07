@@ -143,7 +143,7 @@
             this.dsMonAn.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dsMonAn.RowHeadersWidth = 62;
             this.dsMonAn.RowTemplate.Height = 25;
-            this.dsMonAn.Size = new System.Drawing.Size(1114, 197);
+            this.dsMonAn.Size = new System.Drawing.Size(1110, 197);
             this.dsMonAn.TabIndex = 5;
             this.dsMonAn.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dsMonAn_CellContentClick);
             // 
@@ -260,7 +260,7 @@
             this.dsDoiTac.Name = "dsDoiTac";
             this.dsDoiTac.RowHeadersWidth = 62;
             this.dsDoiTac.RowTemplate.Height = 33;
-            this.dsDoiTac.Size = new System.Drawing.Size(1439, 240);
+            this.dsDoiTac.Size = new System.Drawing.Size(1440, 240);
             this.dsDoiTac.TabIndex = 18;
             this.dsDoiTac.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dsDoiTac_CellContentClick);
             // 
@@ -283,7 +283,7 @@
             this.button_quaylai.Location = new System.Drawing.Point(1266, 829);
             this.button_quaylai.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button_quaylai.Name = "button_quaylai";
-            this.button_quaylai.Size = new System.Drawing.Size(232, 107);
+            this.button_quaylai.Size = new System.Drawing.Size(232, 99);
             this.button_quaylai.TabIndex = 20;
             this.button_quaylai.Text = "QUAY LẠI";
             this.button_quaylai.UseVisualStyleBackColor = false;

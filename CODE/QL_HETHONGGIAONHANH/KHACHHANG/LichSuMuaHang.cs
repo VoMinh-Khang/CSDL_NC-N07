@@ -57,13 +57,13 @@ namespace QL_HETHONGGIAONHANH
             dsDonHang.DefaultCellStyle.Font = new Font("Time New Roman", 12);
 
             // set kích thước cột
-            dsDonHang.Columns[0].Width = 100;
+            dsDonHang.Columns[0].Width = 150;
             dsDonHang.Columns[1].Width = 200;
-            dsDonHang.Columns[2].Width = 100;
-            dsDonHang.Columns[3].Width = 200;
+            dsDonHang.Columns[2].Width = 150;
+            dsDonHang.Columns[3].Width = 250;
             dsDonHang.Columns[4].Width = 100;
             dsDonHang.Columns[5].Width = 100;
-            dsDonHang.Columns[6].Width = 100;
+            dsDonHang.Columns[6].Width = 150;
             dsDonHang.Columns[7].Width = 200;
             dsDonHang.Columns[8].Width = 200;
             dsDonHang.Columns[9].Width = 200;
@@ -119,7 +119,7 @@ namespace QL_HETHONGGIAONHANH
                 MessageBox.Show("Bạn chưa chọn đơn hàng nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            CT_DONHANG ct_donhang_nay = new CT_DONHANG(txtBox_MaDH.Text.Trim().ToString());
+            CT_DONHANG ct_donhang_nay = new CT_DONHANG(txtBox_MaDH.Text.Trim().ToString(), txtBox_TinhTrang.Text.ToString(),MAKH);
             ct_donhang_nay.StartPosition = FormStartPosition.CenterScreen;
             ct_donhang_nay.Show();
         }

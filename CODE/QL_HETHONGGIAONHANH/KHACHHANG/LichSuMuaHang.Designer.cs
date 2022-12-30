@@ -56,7 +56,7 @@
             // btn_XemChiTiet
             // 
             this.btn_XemChiTiet.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_XemChiTiet.Location = new System.Drawing.Point(708, 184);
+            this.btn_XemChiTiet.Location = new System.Drawing.Point(711, 175);
             this.btn_XemChiTiet.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_XemChiTiet.Name = "btn_XemChiTiet";
             this.btn_XemChiTiet.Size = new System.Drawing.Size(180, 48);
@@ -70,7 +70,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(56, 70);
+            this.label1.Location = new System.Drawing.Point(48, 61);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 32);
@@ -80,7 +80,7 @@
             // txtBox_MaDH
             // 
             this.txtBox_MaDH.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtBox_MaDH.Location = new System.Drawing.Point(56, 125);
+            this.txtBox_MaDH.Location = new System.Drawing.Point(48, 116);
             this.txtBox_MaDH.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtBox_MaDH.Name = "txtBox_MaDH";
             this.txtBox_MaDH.Size = new System.Drawing.Size(123, 39);
@@ -89,7 +89,7 @@
             // txtBox_TongTien
             // 
             this.txtBox_TongTien.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtBox_TongTien.Location = new System.Drawing.Point(426, 125);
+            this.txtBox_TongTien.Location = new System.Drawing.Point(418, 116);
             this.txtBox_TongTien.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtBox_TongTien.Name = "txtBox_TongTien";
             this.txtBox_TongTien.Size = new System.Drawing.Size(141, 39);
@@ -100,7 +100,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(426, 70);
+            this.label2.Location = new System.Drawing.Point(418, 61);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(122, 32);
@@ -112,7 +112,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(223, 70);
+            this.label3.Location = new System.Drawing.Point(215, 61);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(129, 32);
@@ -123,7 +123,7 @@
             // txtBox_TinhTrang
             // 
             this.txtBox_TinhTrang.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtBox_TinhTrang.Location = new System.Drawing.Point(208, 125);
+            this.txtBox_TinhTrang.Location = new System.Drawing.Point(200, 116);
             this.txtBox_TinhTrang.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtBox_TinhTrang.Name = "txtBox_TinhTrang";
             this.txtBox_TinhTrang.Size = new System.Drawing.Size(191, 39);
@@ -134,7 +134,7 @@
             this.button_XacNhanDon.BackColor = System.Drawing.Color.PaleGreen;
             this.button_XacNhanDon.Enabled = false;
             this.button_XacNhanDon.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button_XacNhanDon.Location = new System.Drawing.Point(607, 75);
+            this.button_XacNhanDon.Location = new System.Drawing.Point(609, 66);
             this.button_XacNhanDon.Name = "button_XacNhanDon";
             this.button_XacNhanDon.Size = new System.Drawing.Size(137, 89);
             this.button_XacNhanDon.TabIndex = 8;
@@ -147,9 +147,9 @@
             this.button_huydon.BackColor = System.Drawing.Color.LightCoral;
             this.button_huydon.Enabled = false;
             this.button_huydon.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button_huydon.Location = new System.Drawing.Point(770, 75);
+            this.button_huydon.Location = new System.Drawing.Point(772, 66);
             this.button_huydon.Name = "button_huydon";
-            this.button_huydon.Size = new System.Drawing.Size(105, 89);
+            this.button_huydon.Size = new System.Drawing.Size(118, 89);
             this.button_huydon.TabIndex = 9;
             this.button_huydon.Text = "Hủy Đơn";
             this.button_huydon.UseVisualStyleBackColor = false;

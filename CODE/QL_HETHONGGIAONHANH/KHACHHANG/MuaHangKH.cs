@@ -37,13 +37,12 @@ namespace QL_HETHONGGIAONHANH
 
             string sql = "SELECT MAKHACH FROM KHACHHANG WHERE TAIKHOAN = '" + id + "'";
             MAKHACH = Functions.GetFieldValues(sql);
-            gh = new GioHangKH(MAKHACH);//(MAKHACH, id, id);
+            gh = new GioHangKH(MAKHACH);
         }
 
         private void MuaHangKH_Load(object sender, EventArgs e)
         {
             Load_Data_DSDoiTac();
-            //Load_Data_DSMonAn();        
         }
 
         private void btn_TimMon_Click(object sender, EventArgs e)
@@ -76,10 +75,10 @@ namespace QL_HETHONGGIAONHANH
             dsMonAn.Columns[0].Width = 150;
             dsMonAn.Columns[1].Width = 150;
             dsMonAn.Columns[2].Width = 200;
-            dsMonAn.Columns[3].Width = 100;
+            dsMonAn.Columns[3].Width = 115;
             dsMonAn.Columns[4].Width = 100;
-            dsMonAn.Columns[5].Width = 200;
-            dsMonAn.Columns[6].Width = 200;
+            dsMonAn.Columns[5].Width = 180;
+            dsMonAn.Columns[6].Width = 150;
             //Không cho người dùng thêm dữ liệu trực tiếp
             dsMonAn.AllowUserToAddRows = false;
             dsMonAn.EditMode = DataGridViewEditMode.EditProgrammatically;
@@ -232,7 +231,6 @@ namespace QL_HETHONGGIAONHANH
             }
             else
             {
-                //DonHangKH dh = new DonHangKH(thucdon.CurrentRow.Cells["TENMON"].Value.ToString(), thucdon.CurrentRow.Cells["GIA"].Value.ToString(), MAKHACH, thucdon.CurrentRow.Cells["SOLUONGTON"].Value.ToString());
                 DonHangKH dh = new DonHangKH(txtBox_TenMon.Text.ToString(), txtBox_GiaMon.Text.ToString(), MAKHACH, textBox_LuongTon.Text.ToString(), textBox_MaCH.Text.ToString(), textBox_MaDT.Text.ToString());
                 dh.StartPosition = FormStartPosition.CenterScreen;
                 dh.Show();

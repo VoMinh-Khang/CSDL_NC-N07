@@ -1,4 +1,6 @@
-﻿namespace QL_HETHONGGIAONHANH
+﻿using System.Windows.Forms;
+
+namespace QL_HETHONGGIAONHANH
 {
     partial class GioHangKH
     {
@@ -67,7 +69,6 @@
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -78,18 +79,18 @@
             this.dataGridView1.Location = new System.Drawing.Point(43, 86);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(775, 222);
             this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellValueChanged);
+            this.dataGridView1.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.DataGridView1_RowsRemoved);
             // 
             // Column1
             // 
             this.Column1.HeaderText = "Column1";
             this.Column1.MinimumWidth = 8;
             this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
             this.Column1.Width = 150;
             // 
             // Column2
@@ -97,7 +98,6 @@
             this.Column2.HeaderText = "Column2";
             this.Column2.MinimumWidth = 8;
             this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
             this.Column2.Width = 150;
             // 
             // Column3
@@ -105,7 +105,6 @@
             this.Column3.HeaderText = "Column3";
             this.Column3.MinimumWidth = 8;
             this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
             this.Column3.Width = 150;
             // 
             // Column4
@@ -113,7 +112,6 @@
             this.Column4.HeaderText = "Column4";
             this.Column4.MinimumWidth = 8;
             this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
             this.Column4.Width = 150;
             // 
             // Column5
@@ -121,7 +119,6 @@
             this.Column5.HeaderText = "Column5";
             this.Column5.MinimumWidth = 8;
             this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
             this.Column5.Width = 150;
             // 
             // label1
@@ -275,7 +272,9 @@
             this.Controls.Add(this.btn_muangay);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "GioHangKH";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "GIỎ HÀNG";
+            this.Load += new System.EventHandler(this.GioHangKH_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
